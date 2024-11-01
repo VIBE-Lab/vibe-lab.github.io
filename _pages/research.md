@@ -10,7 +10,7 @@ permalink: /research/
 # Our Research
 <img src="{{ site.url }}{{ site.baseurl }}/images/logopic/group_logo_medium.png" class="img-responsive" width="15%" style="float: left"/>
 
-Our vision is to develop methodologies for designing intelligent autonomous decision-making systems that are secure and resilient against malicious adversaries and natural failures. 
+Our vision is to harness the power of artificial intelligence in the medical field, with a focus on pathological diagnosis, to assist doctors in diagnosing diseases more efficiently and accurately. By enhancing diagnostic precision and streamlining processes, we aim to reduce medical costs, improve resource allocation, and enable broader access to high-quality medical services, ultimately empowering more people to benefit from advanced healthcare solutions.
 
 To do so, we look into these sytems from a security perspective, under various adversary models. Specifically, we develop techniques to assess the risk (i.e., impact and likelihood) of adversaries and failures, and propose methodologies to design and systematically deploy defense measures to prevent, detect, and mitigate malicious attacks and natural disruptive events. In our research, we combine methodologies from cybersecurity, control theory, optimization and machine learning, game-theory and networked systems.
 
