@@ -1,7 +1,7 @@
 ---
-title: "Secure Learning and Control Lab - Publications"
+title: "Vibe Lab - Publications"
 layout: gridlay2
-excerpt: "Secure Learning and Control Lab -- Publications."
+excerpt: "Vibe Lab -- Publications."
 sitemap: false
 tags: [10001, 10002, 10003, 10004, 10005, 10006]
 permalink: /research/research_results/

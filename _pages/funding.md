@@ -1,14 +1,14 @@
 ---
-title: "Secure Learning and Control Lab - Funding"
+title: "Vibe Lab - Funding"
 layout: textlay
-excerpt: "Secure Learning and Control Lab -- Funding."
+excerpt: "Vibe Lab -- Funding."
 sitemap: false
 permalink: /funding/
 ---
 
 # Our Funding
 We are grateful to the following organizations that generously fund our activities:
-- [Uppsala University](http://www.it.uu.se),
+- [Xi’an Jiaotong-Liverpool University](http://www.it.uu.se),
 	- [UU Graduate School in Cybersecurity](http://www.it.uu.se/research/research-arenas/security/graduate_school), an initiative from the Department of Information Technology,
 - [Knut and Alice Wallenberg Foundation](https://kaw.wallenberg.org/) ([Wallenberg Academy Fellow](https://kaw.wallenberg.org/en/andre-teixeira)), 
 - [Swedish Research Council](https://www.vr.se), 
@@ -72,7 +72,7 @@ Their funding supports our work in research, education, and outreach, not the le
 
 **Awarded to:** {{project.lead}}
 
-**USLC Members:** {{project.member}}
+**vibe Members:** {{project.member}}
 
 <a data-toggle="collapse" href="#{{project.key}}-bib"  class="btn-abstract" style="text-decoration:none; color:#ebebeb; hover:#ebebeb;" role="button" aria-expanded="false">**Popular Abstract**</a>
 <div class="collapse" id="{{project.key}}-bib"><div class="well-abs">

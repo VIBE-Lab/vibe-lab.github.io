@@ -1,6 +1,6 @@
 - date: 02 October 2024
   headline: "Welcome Javad as a new PostDoc to our [group](team)!"
-  
+
 - date: 02 September 2024
   headline: "Welcome Xinyu Wei as a new PhD student to our [group](team)! Xinyu will be working on the [ADVOLCANO project](funding) with André and colleagues at KTH and RISE."
 
@@ -15,7 +15,7 @@
 
 - date: 15 July 2024
   headline: "One recent paper has been accepted to [The 19th CRITIS 2024, Rome, Italy](https://critis2024.uniroma3.it/). The paper proposes a centrality-based method to solve a security allocation problem. See the details at [Publications](publications)."
-  
+
 - date: 31 May 2024
   headline: "Welcome Ville Kjellqvist as a new PhD student to our [group](team)! Ville will be working on the [Prob4Sec project](funding) with André, Per, and Torbjörn."
 
@@ -65,7 +65,7 @@
   headline: "The Swedish Research Council has funded our project ''Probabilistic Methods for Secure Learning and Control'' (2024-2027), as part of the special [call for projects in cybersecurity](https://www.vr.se/english/applying-for-funding/decisions/2023-06-22-natural-and-engineering-sciences.html). André and Per will be leading the project."
 
 - date: 18 October 2023
-  headline: "Our group received a grant by the Swedish Energy Agency for our newest four-year project [ADVOLCANO - Adverse Voltage Controllers' Interactions in Active Distribution Networks](https://www.energimyndigheten.se/forskning-och-innovation/projektdatabas/sokresultat/?registrationnumber=2023-201169). The project is led by RISE, together with KTH and our group and Uppsala University. The topic of the project is on active voltage controllers for resilient and safe electricity supply."
+  headline: "Our group received a grant by the Swedish Energy Agency for our newest four-year project [ADVOLCANO - Adverse Voltage Controllers' Interactions in Active Distribution Networks](https://www.energimyndigheten.se/forskning-och-innovation/projektdatabas/sokresultat/?registrationnumber=2023-201169). The project is led by RISE, together with KTH and our group and Xi’an Jiaotong-Liverpool University. The topic of the project is on active voltage controllers for resilient and safe electricity supply."
 
 - date: 17 October 2023
   headline: "A new movie from SSF (Swedish Foundation for Strategic Research) describes [our team's research in developing more secure control systems in a popular scientific way](research)."
@@ -90,7 +90,7 @@
 
 - date: 16 August 2023
   headline: "Welcome Lovisa Eriksson as a new PhD student, Ruslan Seifullaev and Daniel Arnström as new PostDocs to our [group](team)! "
-  
+
 - date: 14 August 2023
   headline: "Our article [''Risk-based Security Measure Allocation Against Actuator Attacks''](https://doi.org/10.1109/OJCSYS.2023.3305831) was accepted to the IEEE Open Journal of Control Systems, 2023. This article considers the problem of risk-optimal allocation of security measures when the actuators of an uncertain control system are under attack."
 
@@ -107,7 +107,7 @@
   headline: "Our article [''Quickest Detection of Deception Attacks on Cyber-Physical Systems with a Parsimonious Watermarking Policy''](https://arxiv.org/abs/2201.09389) has just been accepted to the IFAC Journal Automatica. The paper investigates the problem of quickest change detection via physical watermarking with a twist: to balance the usage of watermarking noise with the detection delay."
 
 - date: 13 March 2022
-  headline: "Sribalaji C. Anand has received the Liljewalch travel scholarship to support his research visit to Technion - Israel Institute of Technology, Haifa, June 2023."  
+  headline: "Sribalaji C. Anand has received the Liljewalch travel scholarship to support his research visit to Technion - Israel Institute of Technology, Haifa, June 2023."
 
 - date: 13 March 2022
   headline: "Fatih Emre Tosun received the Liljewalch travel scholarship to support his attendance to the [7th Edition of the Workshop on Nonlinear System Identification Benchmarks](https://www.nonlinearbenchmark.org/) at Eindhoven, The Netherlands, on 19-21 April 2023."
@@ -123,15 +123,15 @@
 
 - date: 31 January 2023
   headline: "(Closed) We have **1 PhD position** in Automatic Control focusing on Secure Learning and Control, **deadline on February 28**. See [the PhD ad](http://uu.varbi.com/en/what:job/jobID:589746/) for how to apply!"
- 
+
 - date: 30 January 2023
   headline: "Welcome Usama Zafar to our [group](team) as a new PhD student! He will be working on the project \"Secure Federated Machine Learning.\""
-  
+
 - date: 20 December 2022
   headline: "Tung has received the Stenholm, Wilgott travel scholarship to support his attendance to an intensive course within the EECI International Graduate School on Control 2023."
-  
+
 - date: 20 December 2022
-  headline: "Sribalaji has received the Stenholm, Wilgott travel scholarship to support his research visit to Eindhoven University of Technology between March and July, 2023."  
+  headline: "Sribalaji has received the Stenholm, Wilgott travel scholarship to support his research visit to Eindhoven University of Technology between March and July, 2023."
 
 - date: 10 December 2022
   headline: "Our two recent papers were presented [IEEE Conf. on Decisions and Control 2022](https://cdc2022.ieeecss.org). Participants can see the pre-recordings until March 2023!"

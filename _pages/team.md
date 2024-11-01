@@ -1,5 +1,5 @@
 ---
-title: "Secure Learning and Control Lab - Team"
+title: "Vibe Lab - Team"
 layout: gridlay
 excerpt: "Team members"
 sitemap: false
