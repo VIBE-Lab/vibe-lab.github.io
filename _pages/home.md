@@ -41,7 +41,7 @@ Our vision is to harness the power of artificial intelligence in the medical fie
 
 
 ### Research
-OOur research integrates key elements from object detection and segmentation, domain adaptation and generation, self-supervised learning, unsupervised learning, and image denoising. For an overview of some of our primary research themes, please visitour [Research page](research).
+Our research integrates key elements from object detection and segmentation, domain adaptation and generation, self-supervised learning, unsupervised learning, and image denoising. For an overview of some of our primary research themes, please visitour [Research page](research).
 
 
 ### Scientific environment
