@@ -32,7 +32,7 @@ permalink: /publications/
  <div class="well">
   <pubtit>{{ publi.title }}</pubtit>
   <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="20%" style="float: left" />
-  <p>{{ publi.description }}{{ publi.cite }}</p>
+  <p>{{ publi.description }}&nbsp;{{ publi.cite }}</p>
   <p><em>{{ publi.authors }}</em></p>
   {{ publi.link | markdownify }}
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
