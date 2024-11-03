@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 layout: textlay
-excerpt: "Secure Learning and Control Lab at Uppsala University."
+excerpt: "Vision Intelligence and Biomedical Exploration Lab at Xi’an Jiaotong-Liverpool University."
 sitemap: false
 permalink: /allprojects.html
 ---
@@ -22,7 +22,7 @@ permalink: /allprojects.html
 
 **Awarded to:** {{project.lead}}
 
-**USLC Members:** {{project.member}}
+**VIBE Members:** {{project.member}}
 
 <a data-toggle="collapse" href="#{{project.key}}-bib"  class="btn-abstract" style="text-decoration:none; color:#ebebeb; hover:#ebebeb;" role="button" aria-expanded="false">**Popular Abstract**</a>
 <div class="collapse" id="{{project.key}}-bib"><div class="well-abs">

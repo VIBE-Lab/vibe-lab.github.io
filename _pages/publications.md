@@ -1,9 +1,9 @@
 ---
-title: "Secure Learning and Control Lab - Publications"
+title: "Vision Intelligence and Biomedical Exploration Lab - Publications"
 layout: gridlay
-excerpt: "Secure Learning and Control Lab -- Publications."
+excerpt: "Vision Intelligence and Biomedical Exploration Lab -- Publications."
 sitemap: false
-years: [2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010]
+years: [2023]
 permalink: /publications/
 ---
 <!-- _pages/publications.md -->
@@ -34,7 +34,7 @@ permalink: /publications/
   <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="20%" style="float: left" />
   <p>{{ publi.description }}</p>
   <p><em>{{ publi.authors }}</em></p>
-  <p><strong><a href="{{ publi.link.url }}">{{ publi.link.display }}</a></strong></p>
+  {{ publi.link | markdownify }}
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
   <p> {{ publi.news2 }}</p>
  </div>
@@ -46,7 +46,9 @@ permalink: /publications/
   <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="40%" style="float: left" />
   <p>{{ publi.description }}</p>
   <p><em>{{ publi.authors }}</em></p>
-  <p><strong><a href="{{ publi.link.url }}">{{ publi.link.display }}</a></strong></p>
+
+  {{ publi.link | markdownify }}
+
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
   <p> {{ publi.news2 }}</p>
  </div>

@@ -1,7 +1,7 @@
 ---
 title: "News"
 layout: textlay
-excerpt: "Secure Learning and Control Lab at Uppsala University."
+excerpt: "Vision Intelligence and Biomedical Exploration Lab at Xi’an Jiaotong-Liverpool University."
 sitemap: false
 permalink: /allnews.html
 ---

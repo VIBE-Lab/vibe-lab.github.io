@@ -6,12 +6,12 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Uppsala Secure Learning and Control Lab
+title: XJTLU Vision Intelligence and Biomedical Exploration Lab
 email: andre.teixeira@it.uu.se
 description: > # this means to ignore newlines until "baseurl:"
-  Website of the Uppsala Secure Learning and Control Lab.
+  Website of the XJTLU Vision Intelligence and Biomedical Exploration Lab.
 baseurl: ""
-url: "https://uslc-lab.github.io"
+url: "https://vibe-lab.github.io"
 
 include:
   - .htaccess

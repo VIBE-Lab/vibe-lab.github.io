@@ -1,33 +1,27 @@
 ---
-title: "Secure Learning and Control Lab - Home"
+title: "Vision Intelligence and Biomedical Exploration Lab - Home"
 layout: homelay
-excerpt: "Secure Learning and Control Lab at Uppsala University."
+excerpt: "Vision Intelligence and Biomedical Exploration Lab at Xi’an Jiaotong-Liverpool University."
 sitemap: false
 permalink: /
 ---
-
-### Vision
-Our vision is to develop methodologies for designing intelligent autonomous decision-making systems that are secure and resilient against malicious adversaries and natural failures. 
 
 <div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover" >
     <!-- Menu -->
     <ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel" data-slide-to="1"></li>
-        <li data-target="#carousel" data-slide-to="2"></li>
+        <!--- <li data-target="#carousel" data-slide-to="1"></li> --->
+        <!--- <li data-target="#carousel" data-slide-to="2"></li> --->
     </ol>
 
     <!-- Items -->
     <div class="carousel-inner" markdown="0">
         <div class="item active">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/slider7001400/DISC_2022_USLC.jpg" height="4" alt="Slide 1" />
+            <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/lab/xjtlu.jpg" height="4" alt="Slide 1" />
         </div>
-        <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/slider7001400/new_angstrom.jpg" class="img-responsive" height="40%" alt="Slide 2" />
-        </div>
-        <div class="item">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/slider7001400/uppsala_photo.jpg" height="4" alt="Slide 3" />
-        </div>     
+        <!--- <div class="item"> --->
+            <!--- <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/lab/aiac.jpg" class="img-responsive" height="40%" alt="Slide 2" /> --->
+        <!--- </div> --->
     </div>
   <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -41,22 +35,22 @@ Our vision is to develop methodologies for designing intelligent autonomous deci
 
 
 ### Research
-Our research incorporates elements from cybersecurity, control theory, optimization and machine learning, reinforcement learning, game-theory and networked / distributed systems. You can find an overview of some of our research themes at our [Research page](research).
+Our research is dedicated to advancing medical imaging, with a specialized focus on pathology image analysis. We develop cutting-edge algorithms for quantitative analysis, diagnostic support, and multimodal data integration, aiming to enhance precision and facilitate clinical decision-making.
 
+Our approach incorporates essential techniques from object detection and segmentation, domain adaptation and generation, and both self-supervised and unsupervised learning. We also prioritize advanced image enhancement methods, such as image denoising and super-resolution, to improve the clarity and quality of medical images.  Through these innovations, we aim to push the boundaries of medical image analysis and support more informed, data-driven healthcare.
 
 ### Scientific environment
-We are a dynamic research group at the [Department of Information Technology, Uppsala University](http://www.it.uu.se), Sweden. We exchange ideas and work with our colleagues from the several of the Department's research areas, namely [Cybersecurity](https://www.it.uu.se/research/cybersecurity), [AI](https://www.it.uu.se/research/artificial-intelligence), [Data Science](https://www.it.uu.se/research/data-science), and [Control Systems](https://www.it.uu.se/research/control-and-dynamical-systems). We also have ongoing collaborations with our neighboring Department of Electrical Engineering. We are driving local research initiatives related to cybersecurity, through the [Graduate School in Cybersecurity](http://www.it.uu.se/research/research-arenas/security/graduate_school) and the [Cybersecurity Arena](http://www.it.uu.se/research/research-arenas/security).
+<!---We are a dynamic research group at the [AI and Advanced Computing, XJTLU Entrepreneur College](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing), Taicang. We exchange ideas and work with our colleagues from the several of the Department's research areas, namely [Cybersecurity](https://www.it.uu.se/research/cybersecurity), [AI](https://www.it.uu.se/research/artificial-intelligence), [Data Science](https://www.it.uu.se/research/data-science), and [Control Systems](https://www.it.uu.se/research/control-and-dynamical-systems). We also have ongoing collaborations with our neighboring Department of Electrical Engineering. We are driving local research initiatives related to cybersecurity, through the [Graduate School in Cybersecurity](http://www.it.uu.se/research/research-arenas/security/graduate_school) and the [Cybersecurity Arena](http://www.it.uu.se/research/research-arenas/security).--->
+We are a dynamic research group at the [AI and Advanced Computing, XJTLU Entrepreneur College](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing), located in Taicang. Our collaborative approach involves exchanging ideas and working closely with esteemed research institutions, including [Ruijin Hospital](https://www.rjh.com.cn/), [BGI Genomics](https://www.bgi.com/global), and [HISTO](https://www.histo.cn).
 
- **We are looking for driven new PhD students, Postdocs, and Master students to join the team** [(more info)]({{ site.url }}{{ site.baseurl }}/openings) **!**
 
-
-### Our support
-We are grateful for the early-career funding from [Uppsala University](http://www.it.uu.se), the [Knut and Alice Wallenberg Foundation](https://kaw.wallenberg.org/) ([Wallenberg Academy Fellow](https://kaw.wallenberg.org/en/andre-teixeira)), the [Swedish Research Council](https://www.vr.se) ([Starting Grant](https://www.vr.se/english/applying-for-funding/calls/2018-03-07-starting-grant-within-natural-and-engineering-sciences.html)), and the [Swedish Foundation for Strategic Research](https://strategiska.se) ([Future Research Leaders Grant](https://strategiska.se/en/research/ongoing-research/framtidens-forskningsledare-7/)).
+<!--- ### Our support
+We are grateful for the early-career funding from [Xi’an Jiaotong-Liverpool University](http://www.it.uu.se), the [Knut and Alice Wallenberg Foundation](https://kaw.wallenberg.org/) ([Wallenberg Academy Fellow](https://kaw.wallenberg.org/en/andre-teixeira)), the [Swedish Research Council](https://www.vr.se) ([Starting Grant](https://www.vr.se/english/applying-for-funding/calls/2018-03-07-starting-grant-within-natural-and-engineering-sciences.html)), and the [Swedish Foundation for Strategic Research](https://strategiska.se) ([Future Research Leaders Grant](https://strategiska.se/en/research/ongoing-research/framtidens-forskningsledare-7/)).
 
 <div class="row">
 
 <div class="col-sm-3 clearfix vcenter">
-<img src="{{ site.url }}{{ site.baseurl }}/images/logopic/UU_logo_4f125px.png" style="width: 125px">
+<img src="{{ site.url }}{{ site.baseurl }}/images/logopic/xjtlu_logo.png" style="width: 125px">
 
 </div>
 
@@ -78,5 +72,5 @@ We are grateful for the early-career funding from [Uppsala University](http://ww
 </div>
 
 See our funding and ongoing projects at our [Funding page](funding).
- 
+ --->
  
