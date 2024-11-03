@@ -34,10 +34,7 @@ permalink: /
 </div>
 
 
-### Research
-Our research is dedicated to advancing medical imaging, with a specialized focus on pathology image analysis. We develop cutting-edge algorithms for quantitative analysis, diagnostic support, and multimodal data integration, aiming to enhance precision and facilitate clinical decision-making.
-
-Our approach incorporates essential techniques from object detection and segmentation, domain adaptation and generation, and both self-supervised and unsupervised learning. We also prioritize advanced image enhancement methods, such as image denoising and super-resolution, to improve the clarity and quality of medical images.  Through these innovations, we aim to push the boundaries of medical image analysis and support more informed, data-driven healthcare.
+Our research focuses on advancing the field of medical imaging, with a particular emphasis on pathology image analysis. We develop state-of-the-art algorithms for quantitative analysis, diagnostic support, and multimodal data integration, all aimed at enhancing precision and improving clinical decision-making. Through these innovations, we aim to transform medical imaging and contribute to more data-driven, informed healthcare practices.
 
 ### Scientific environment
 <!---We are a dynamic research group at the [AI and Advanced Computing, XJTLU Entrepreneur College](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing), Taicang. We exchange ideas and work with our colleagues from the several of the Department's research areas, namely [Cybersecurity](https://www.it.uu.se/research/cybersecurity), [AI](https://www.it.uu.se/research/artificial-intelligence), [Data Science](https://www.it.uu.se/research/data-science), and [Control Systems](https://www.it.uu.se/research/control-and-dynamical-systems). We also have ongoing collaborations with our neighboring Department of Electrical Engineering. We are driving local research initiatives related to cybersecurity, through the [Graduate School in Cybersecurity](http://www.it.uu.se/research/research-arenas/security/graduate_school) and the [Cybersecurity Arena](http://www.it.uu.se/research/research-arenas/security).--->

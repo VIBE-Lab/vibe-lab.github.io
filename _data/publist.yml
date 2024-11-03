@@ -5,7 +5,7 @@
   year: 2024
   link: <p><strong><a href="https://cosas.grand-challenge.org">Cosas Challenge</a></strong>&nbsp;&nbsp;&nbsp;<strong><a href="https://drive.google.com/drive/folders/1-F2XLnJ3lUr-sbiKW7qMpsF_ecrfQf4b?usp=sharing">Dataset Download</a></strong></p>
   highlight: 1
-  cite: If the dataset from the challenge is helpful to you, please consider citing <strong><a href="https://dl.acm.org/doi/10.1145/3691521.3691537">our paper</a></strong> in your publications.
+  cite: If the dataset from the challenge is helpful to you, please consider citing <strong><a href="https://dl.acm.org/doi/10.1145/3691521.3691537">our pre-experimental paper</a></strong>. We are currently in the process of finalizing the competition paper and will be releasing it shortly. Thank you for your support!
   notes:
 
 # - title: "Security Allocation in Networked Control Systems"

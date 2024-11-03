@@ -34,7 +34,9 @@ permalink: /publications/
   <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="20%" style="float: left" />
   <p>{{ publi.description }}{{ publi.cite }}</p>
   <p><em>{{ publi.authors }}</em></p>
+  <div style="text-align: right;">
   {{ publi.link | markdownify }}
+  </div>
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
   <p> {{ publi.news2 }}</p>
  </div>
@@ -46,9 +48,9 @@ permalink: /publications/
   <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/{{ publi.image }}" class="img-responsive" width="40%" style="float: left" />
   <p>{{ publi.description }}{{ publi.cite }}</p>
   <p><em>{{ publi.authors }}</em></p>
-
+  <div style="text-align: right;">
   {{ publi.link | markdownify }}
-
+  </div>
   <p class="text-danger"><strong> {{ publi.news1 }}</strong></p>
   <p> {{ publi.news2 }}</p>
  </div>
