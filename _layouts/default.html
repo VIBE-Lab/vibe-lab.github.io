@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body class="{% if page.layout == 'homelay' %}vibe-home-body{% endif %}">
+  <body class="{% if page.layout == 'homelay' %}vibe-home-body{% else %}vibe-page-body{% endif %}">
 
     {% include header.html %}
 
