@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 340" role="img" aria-labelledby="title desc">
+  <title id="title">VIBE Lab logo</title>
+  <desc id="desc">VIBE Lab logo for Visual Intelligence and Biomedical Exploration.</desc>
+  <defs>
+    <linearGradient id="blueDepth" x1="74" y1="42" x2="294" y2="177" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0D2B45"/>
+      <stop offset="1" stop-color="#164F7A"/>
+    </linearGradient>
+    <linearGradient id="greenLine" x1="286" y1="57" x2="404" y2="167" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#18B8A8"/>
+      <stop offset="1" stop-color="#0A6B4F"/>
+    </linearGradient>
+  </defs>
+  <rect width="560" height="340" fill="none"/>
+  <g transform="translate(60 28)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 72 L74 178 H198 C222 178 238 165 246 143" stroke="url(#blueDepth)" stroke-width="31"/>
+    <path d="M152 50 V179" stroke="url(#greenLine)" stroke-width="30"/>
+    <path d="M197 54 V177" stroke="#0D2B45" stroke-width="29"/>
+    <path d="M198 54 H250 C280 54 280 101 250 101 H198" stroke="#0D2B45" stroke-width="29"/>
+    <path d="M198 107 H262 C298 107 296 177 260 177 H198" stroke="#0D2B45" stroke-width="29"/>
+    <path d="M272 57 H361" stroke="#0A6B4F" stroke-width="26"/>
+    <path d="M276 113 H354" stroke="#D81B60" stroke-width="26"/>
+    <path d="M269 171 H361" stroke="#0A6B4F" stroke-width="26"/>
+  </g>
+  <circle cx="212" cy="46" r="17" fill="#D81B60"/>
+  <g font-family="Montserrat, Avenir Next, Arial, sans-serif" font-weight="600" font-size="45" fill="#0D2B45">
+    <text x="158" y="258">V</text>
+    <text x="242" y="258">I</text>
+    <text x="310" y="258">B</text>
+    <text x="395" y="258">E</text>
+  </g>
+  <text x="280" y="300" text-anchor="middle"
+        font-family="Montserrat, Avenir Next, Arial, sans-serif"
+        font-size="13" font-weight="700" letter-spacing="3.2" fill="#0D2B45">VISUAL INTELLIGENCE AND BIOMEDICAL EXPLORATION</text>
+</svg>
