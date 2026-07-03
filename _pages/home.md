@@ -1,73 +1,82 @@
 ---
 title: "Vision Intelligence and Biomedical Exploration Lab - Home"
 layout: homelay
-excerpt: "Vision Intelligence and Biomedical Exploration Lab at Xi’an Jiaotong-Liverpool University."
+excerpt: "Vision Intelligence and Biomedical Exploration Lab at Xi'an Jiaotong-Liverpool University."
 sitemap: false
 permalink: /
 ---
 
-<div markdown="0" id="carousel" class="carousel slide" data-ride="carousel" data-interval="4000" data-pause="hover" >
-    <!-- Menu -->
-    <ol class="carousel-indicators">
-        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-        <!--- <li data-target="#carousel" data-slide-to="1"></li> --->
-        <!--- <li data-target="#carousel" data-slide-to="2"></li> --->
-    </ol>
-
-    <!-- Items -->
-    <div class="carousel-inner" markdown="0">
-        <div class="item active">
-            <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/lab/xjtlu.jpg" height="4" alt="Slide 1" />
-        </div>
-        <!--- <div class="item"> --->
-            <!--- <img src="{{ site.url }}{{ site.baseurl }}/images/picpic/lab/aiac.jpg" class="img-responsive" height="40%" alt="Slide 2" /> --->
-        <!--- </div> --->
+<section class="vibe-hero" aria-label="VIBE Lab introduction">
+  <div class="vibe-hero-copy">
+    <p class="vibe-eyebrow">XJTLU biomedical AI research group</p>
+    <h1>VIBE Lab</h1>
+    <p class="vibe-hero-subtitle">Visual Intelligence and Biomedical Exploration</p>
+    <p class="vibe-lead">
+      We are a research group focused on visual intelligence and medical image analysis.
+      Our work starts from real biomedical and clinical problems, with the goal of making
+      AI methods that can move from research prototypes into practical, trustworthy use.
+      We also care about the craft of research software: tools should be technically strong,
+      visually clear, and genuinely easy for people to use.
+    </p>
+    <div class="vibe-hero-actions">
+      <a class="vibe-button vibe-button-primary" href="{{ site.url }}{{ site.baseurl }}/research">Research</a>
+      <a class="vibe-button" href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a>
+      <a class="vibe-button" href="{{ site.url }}{{ site.baseurl }}/resources">Resources</a>
     </div>
-  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
+  </div>
 
+  <div class="vibe-visual-card" aria-label="Abstract visual intelligence artwork">
+    <div class="vibe-visual-grid" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+    <div class="vibe-visual-caption">
+      <strong>Images, models, workflows.</strong>
+      <span>AI for biomedical visual understanding.</span>
+    </div>
+  </div>
+</section>
 
-Our research focuses on advancing the field of medical imaging, with a particular emphasis on pathology image analysis. We develop state-of-the-art algorithms for quantitative analysis, diagnostic support, and multimodal data integration, all aimed at enhancing precision and improving clinical decision-making. Through these innovations, we aim to transform medical imaging and contribute to more data-driven, informed healthcare practices.
+<section class="vibe-section" aria-label="Research focus">
+  <div class="vibe-section-heading">
+    <h2>Research Focus</h2>
+    <a href="{{ site.url }}{{ site.baseurl }}/research">Explore research</a>
+  </div>
 
-### Scientific environment
-<!---We are a dynamic research group at the [AI and Advanced Computing, XJTLU Entrepreneur College](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing), Taicang. We exchange ideas and work with our colleagues from the several of the Department's research areas, namely [Cybersecurity](https://www.it.uu.se/research/cybersecurity), [AI](https://www.it.uu.se/research/artificial-intelligence), [Data Science](https://www.it.uu.se/research/data-science), and [Control Systems](https://www.it.uu.se/research/control-and-dynamical-systems). We also have ongoing collaborations with our neighboring Department of Electrical Engineering. We are driving local research initiatives related to cybersecurity, through the [Graduate School in Cybersecurity](http://www.it.uu.se/research/research-arenas/security/graduate_school) and the [Cybersecurity Arena](http://www.it.uu.se/research/research-arenas/security).--->
-We are a dynamic research group at the [AI and Advanced Computing, XJTLU Entrepreneur College](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing), located in Taicang. Our collaborative approach involves exchanging ideas and working closely with esteemed research institutions, including [Ruijin Hospital](https://www.rjh.com.cn/), [BGI Genomics](https://www.bgi.com/global), and [HISTO](https://www.histo.cn).
+  <div class="vibe-focus-grid">
+    <article class="vibe-focus-card">
+      <h3>Computational Pathology</h3>
+      <p>Whole-slide image analysis, tissue phenotyping, diagnostic support, and quantitative pathology.</p>
+    </article>
+    <article class="vibe-focus-card">
+      <h3>Biomedical Image Analysis</h3>
+      <p>Microscopy, denoising, segmentation, representation learning, and visual measurement.</p>
+    </article>
+    <article class="vibe-focus-card">
+      <h3>Multimodal Biomedical AI</h3>
+      <p>Learning from images, clinical context, reports, molecular signals, and other biomedical data.</p>
+    </article>
+    <article class="vibe-focus-card">
+      <h3>Usable AI Software</h3>
+      <p>Datasets, software, models, demos, and interfaces that make research outputs easier to evaluate and reuse.</p>
+    </article>
+  </div>
+</section>
 
+<section class="vibe-section" aria-label="Latest news">
+  <div class="vibe-section-heading">
+    <h2>Latest News</h2>
+    <a href="{{ site.url }}{{ site.baseurl }}/allnews.html">All news</a>
+  </div>
 
-<!--- ### Our support
-We are grateful for the early-career funding from [Xi’an Jiaotong-Liverpool University](http://www.it.uu.se), the [Knut and Alice Wallenberg Foundation](https://kaw.wallenberg.org/) ([Wallenberg Academy Fellow](https://kaw.wallenberg.org/en/andre-teixeira)), the [Swedish Research Council](https://www.vr.se) ([Starting Grant](https://www.vr.se/english/applying-for-funding/calls/2018-03-07-starting-grant-within-natural-and-engineering-sciences.html)), and the [Swedish Foundation for Strategic Research](https://strategiska.se) ([Future Research Leaders Grant](https://strategiska.se/en/research/ongoing-research/framtidens-forskningsledare-7/)).
-
-<div class="row">
-
-<div class="col-sm-3 clearfix vcenter">
-<img src="{{ site.url }}{{ site.baseurl }}/images/logopic/xjtlu_logo.png" style="width: 125px">
-
-</div>
-
-<div class="col-sm-3 clearfix vcenter">
-<img src="{{ site.url }}{{ site.baseurl }}/images/logopic/KAW_Logotype_Large.png" style="width: 125px">
-
-</div>
-
-<div class="col-sm-3 clearfix vcenter">
-<img src="{{ site.url }}{{ site.baseurl }}/images/logopic/svart_fyrkant_eng.png" style="width: 120px">
-
-</div>
-
-<div class="col-sm-2 clearfix vcenter">
-<img src="{{ site.url }}{{ site.baseurl }}/images/logopic/ssf_gb_rgb-300x247.png" style="width: 124px">
-
-</div>
-
-</div>
-
-See our funding and ongoing projects at our [Funding page](funding).
- --->
- 
+  <div class="vibe-news-panel">
+    {% for article in site.data.news limit:3 %}
+    <article class="vibe-news-item">
+      <time>{{ article.date }}</time>
+      <p>{{ article.headline | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>

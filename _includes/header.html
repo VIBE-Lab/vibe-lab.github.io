@@ -1,31 +1,67 @@
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		<span class="sr-only">Toggle navigation</span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	  </button>
+<script>
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem("vibe-theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("vibe-theme-dark");
+      }
+    } catch (error) {}
+  })();
+</script>
 
-
-    <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
-    	<img style="position:relative; top:-25px" src="/images/logopic/group_logo_medium.png" height="40" width="auto" class="d-inline-block align-left" alt="">
-    <a class="navbar-brand" href="{{ site.url }}{{ site.baseurl }}/">
-			  Vision Intelligence and Biomedical Exploration Lab
+<header class="vibe-site-header" role="banner">
+  <div class="vibe-header-inner">
+    <a class="vibe-brand" href="{{ site.url }}{{ site.baseurl }}/" aria-label="VIBE Lab home">
+      <span class="vibe-brand-mark" aria-hidden="true"></span>
+      <span>
+        <strong>VIBE Lab</strong>
+        <small>Visual Intelligence and Biomedical Exploration</small>
+      </span>
     </a>
-  	</a>
-	</div>
-	<div class="collapse navbar-collapse" id="navbar-collapse-1">
-	  <ul class="nav navbar-nav navbar-right">
-		<li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
-		<li><a href="{{ site.url }}{{ site.baseurl }}/team">Team</a></li>
-		<!--- <li><a href="{{ site.url }}{{ site.baseurl }}/openings">Openings</a></li> --->
-		<li><a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a></li>
-    <!--- <li><a href="{{ site.url }}{{ site.baseurl }}/research">Research</a></li> --->
-		<!--- <li><a href="{{ site.url }}{{ site.baseurl }}/funding">Funding</a></li> --->
-		<!--- <li><a href="{{ site.url }}{{ site.baseurl }}/pictures">(Pics)</a></li> --->
-	  </ul>
-	</div>
+
+    <input class="vibe-nav-toggle" type="checkbox" id="vibe-nav-toggle" aria-label="Toggle navigation">
+    <label class="vibe-nav-button" for="vibe-nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="vibe-nav" aria-label="Primary navigation">
+      <a href="{{ site.url }}{{ site.baseurl }}/">Home</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/research">Research</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/publications">Publications</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/team">Team</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/resources">Resources</a>
+      <a href="{{ site.url }}{{ site.baseurl }}/allnews.html">News</a>
+      <a href="mailto:Jingxin.Liu@xjtlu.edu.cn">Contact</a>
+    </nav>
+
+    <button class="vibe-theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <span class="vibe-theme-track" aria-hidden="true"><span class="vibe-theme-dot"></span></span>
+      <span class="vibe-theme-label">Light</span>
+    </button>
   </div>
-</div>
+</header>
+
+<script>
+  (function () {
+    function setTheme(theme) {
+      var dark = theme === "dark";
+      document.body.classList.toggle("vibe-theme-dark", dark);
+      var label = document.querySelector(".vibe-theme-label");
+      if (label) {
+        label.textContent = dark ? "Dark" : "Light";
+      }
+      try {
+        localStorage.setItem("vibe-theme", dark ? "dark" : "light");
+      } catch (error) {}
+    }
+
+    var button = document.querySelector(".vibe-theme-toggle");
+    if (button) {
+      button.addEventListener("click", function () {
+        setTheme(document.body.classList.contains("vibe-theme-dark") ? "light" : "dark");
+      });
+    }
+
+    setTheme(document.body.classList.contains("vibe-theme-dark") ? "dark" : "light");
+  })();
+</script>
