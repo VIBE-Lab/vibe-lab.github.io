@@ -14,7 +14,7 @@ The website should feel academic, precise, visually intelligent, and practical. 
 
 ## Visual Direction
 
-Blue is the primary color, red is the secondary accent, and green is the tertiary accent. The visual system should support both light and dark modes, with clear typography, strong information hierarchy, compact navigation, and polished but restrained interface details.
+The restored palette uses light blue as the primary color, teal as the calm scientific accent, pink as a restrained highlight, and plum for depth. The visual system should support both light and dark modes, with clear typography, strong information hierarchy, compact navigation, and polished but restrained interface details.
 
 ## Accessibility
 

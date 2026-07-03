@@ -143,13 +143,11 @@ firstp {
 
 :root {
   --vibe-cream: #F0EEE9;
-  --vibe-plum: #536070;
-  --vibe-blue: #0D2B45;
-  --vibe-blue-bright: #2F80C3;
-  --vibe-red: #D81B60;
-  --vibe-green: #0A6B4F;
-  --vibe-pink: var(--vibe-red);
-  --vibe-teal: var(--vibe-green);
+  --vibe-plum: #5D576B;
+  --vibe-pink: #FF3864;
+  --vibe-teal: #368F8B;
+  --vibe-blue: #3DA5D9;
+  --vibe-blue-bright: #7ACCE8;
   --vibe-bg: #f8f7f3;
   --vibe-surface: #ffffff;
   --vibe-surface-2: #efede8;
@@ -158,8 +156,8 @@ firstp {
   --vibe-line: rgba(23, 21, 31, .14);
   --vibe-shadow: 0 24px 80px rgba(23, 21, 31, .12);
   --vibe-primary: var(--vibe-blue);
-  --vibe-secondary: var(--vibe-red);
-  --vibe-tertiary: var(--vibe-green);
+  --vibe-secondary: var(--vibe-pink);
+  --vibe-tertiary: var(--vibe-teal);
 }
 
 body.vibe-theme-dark {
@@ -174,8 +172,8 @@ body.vibe-theme-dark {
 
 body {
   background:
-    linear-gradient(135deg, rgba(47, 128, 195, .12), transparent 36%),
-    linear-gradient(24deg, transparent 62%, rgba(216, 27, 96, .08)),
+    radial-gradient(circle at 10% 10%, rgba(61, 165, 217, .13), transparent 26%),
+    radial-gradient(circle at 86% 22%, rgba(255, 56, 100, .10), transparent 26%),
     var(--vibe-bg);
   color: var(--vibe-ink);
 }
@@ -391,8 +389,8 @@ body.vibe-theme-dark .vibe-theme-dot {
   padding: 0 12px;
   border: 1px solid rgba(61, 165, 217, .28);
   border-radius: 999px;
-  background: rgba(47, 128, 195, .12);
-  color: var(--vibe-primary);
+  background: rgba(61, 165, 217, .13);
+  color: var(--vibe-plum);
   font-size: 12px;
   font-weight: 950;
   letter-spacing: .07em;
@@ -413,32 +411,6 @@ body.vibe-theme-dark .vibe-eyebrow {
   line-height: .95;
   font-weight: 950;
   letter-spacing: 0;
-}
-
-.vibe-hero h1.vibe-hero-logo-title {
-  max-width: 430px;
-  line-height: 0;
-}
-
-.vibe-hero-logo-frame {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: min(430px, 100%);
-  padding: 18px 20px;
-  border: 1px solid rgba(13, 43, 69, .10);
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 18px 54px rgba(13, 43, 69, .10);
-}
-
-.vibe-hero-logo {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  border-radius: 0;
-  box-shadow: none;
 }
 
 .vibe-hero-subtitle {
@@ -489,7 +461,7 @@ body.vibe-theme-dark .vibe-eyebrow {
 .vibe-button-primary:focus {
   border-color: var(--vibe-primary);
   background: var(--vibe-primary);
-  color: #fff;
+  color: #0f0d15;
 }
 
 .vibe-visual-card {
@@ -499,8 +471,8 @@ body.vibe-theme-dark .vibe-eyebrow {
   border: 1px solid var(--vibe-line);
   border-radius: 22px;
   background:
-    linear-gradient(135deg, rgba(47, 128, 195, .24), transparent 45%),
-    linear-gradient(28deg, transparent 52%, rgba(216, 27, 96, .18)),
+    radial-gradient(circle at 24% 24%, rgba(255, 56, 100, .30), transparent 30%),
+    radial-gradient(circle at 78% 66%, rgba(61, 165, 217, .42), transparent 33%),
     linear-gradient(135deg, var(--vibe-surface), var(--vibe-surface-2));
   box-shadow: var(--vibe-shadow);
 }
@@ -518,19 +490,20 @@ body.vibe-theme-dark .vibe-eyebrow {
   border: 1px solid rgba(255, 255, 255, .24);
   border-radius: 15px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, .30), transparent 36%),
+    radial-gradient(circle at 28% 28%, rgba(255, 255, 255, .78) 0 8%, transparent 9%),
+    radial-gradient(circle at 72% 66%, rgba(255, 255, 255, .50) 0 8%, transparent 9%),
     linear-gradient(135deg, var(--vibe-blue), var(--vibe-teal));
 }
 
 .vibe-visual-grid span:nth-child(2n) {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, .28), transparent 36%),
+    radial-gradient(circle at 62% 28%, rgba(255, 255, 255, .68) 0 8%, transparent 9%),
     linear-gradient(135deg, var(--vibe-teal), var(--vibe-blue));
 }
 
 .vibe-visual-grid span:nth-child(3n) {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, .26), transparent 36%),
+    radial-gradient(circle at 54% 58%, rgba(255, 255, 255, .62) 0 8%, transparent 9%),
     linear-gradient(135deg, var(--vibe-plum), var(--vibe-blue));
 }
 
@@ -949,18 +922,24 @@ body.vibe-theme-dark .vibe-member-card {
   width: 104px;
   height: 104px;
   border-radius: 22px;
-  background: linear-gradient(135deg, var(--vibe-blue), var(--vibe-teal));
+  background:
+    radial-gradient(circle at 30% 24%, rgba(255, 255, 255, .70), transparent 18%),
+    linear-gradient(135deg, var(--vibe-blue), var(--vibe-teal));
   color: #fff;
   font-size: 22px;
   font-weight: 950;
 }
 
 .vibe-avatar-fallback-alt {
-  background: linear-gradient(135deg, var(--vibe-secondary), var(--vibe-blue));
+  background:
+    radial-gradient(circle at 68% 30%, rgba(255, 255, 255, .70), transparent 18%),
+    linear-gradient(135deg, var(--vibe-secondary), var(--vibe-blue));
 }
 
 .vibe-avatar-fallback-soft {
-  background: linear-gradient(135deg, var(--vibe-secondary), var(--vibe-tertiary));
+  background:
+    radial-gradient(circle at 48% 30%, rgba(255, 255, 255, .72), transparent 18%),
+    linear-gradient(135deg, var(--vibe-secondary), var(--vibe-tertiary));
 }
 
 .vibe-member-card h3 {
@@ -1234,10 +1213,6 @@ body.vibe-theme-dark .vibe-footer {
 
   .vibe-hero h1 {
     font-size: 44px;
-  }
-
-  .vibe-hero h1.vibe-hero-logo-title {
-    max-width: 330px;
   }
 
   .vibe-lead {
