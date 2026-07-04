@@ -464,50 +464,29 @@ body.vibe-theme-dark .vibe-eyebrow {
   color: #0f0d15;
 }
 
-.vibe-visual-card {
+.vibe-campus-card {
   position: relative;
   min-height: 360px;
+  margin: 0;
   overflow: hidden;
   border: 1px solid var(--vibe-line);
   border-radius: 22px;
-  background:
-    radial-gradient(circle at 24% 24%, rgba(255, 56, 100, .30), transparent 30%),
-    radial-gradient(circle at 78% 66%, rgba(61, 165, 217, .42), transparent 33%),
-    linear-gradient(135deg, var(--vibe-surface), var(--vibe-surface-2));
+  background: var(--vibe-surface);
   box-shadow: var(--vibe-shadow);
 }
 
-.vibe-visual-grid {
-  position: absolute;
-  inset: 28px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 9px;
-  transform: rotate(-5deg);
+.vibe-campus-card img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: none;
 }
 
-.vibe-visual-grid span {
-  border: 1px solid rgba(255, 255, 255, .24);
-  border-radius: 15px;
-  background:
-    radial-gradient(circle at 28% 28%, rgba(255, 255, 255, .78) 0 8%, transparent 9%),
-    radial-gradient(circle at 72% 66%, rgba(255, 255, 255, .50) 0 8%, transparent 9%),
-    linear-gradient(135deg, var(--vibe-blue), var(--vibe-teal));
-}
-
-.vibe-visual-grid span:nth-child(2n) {
-  background:
-    radial-gradient(circle at 62% 28%, rgba(255, 255, 255, .68) 0 8%, transparent 9%),
-    linear-gradient(135deg, var(--vibe-teal), var(--vibe-blue));
-}
-
-.vibe-visual-grid span:nth-child(3n) {
-  background:
-    radial-gradient(circle at 54% 58%, rgba(255, 255, 255, .62) 0 8%, transparent 9%),
-    linear-gradient(135deg, var(--vibe-plum), var(--vibe-blue));
-}
-
-.vibe-visual-caption {
+.vibe-campus-card figcaption {
   position: absolute;
   right: 22px;
   bottom: 22px;
@@ -519,18 +498,18 @@ body.vibe-theme-dark .vibe-eyebrow {
   backdrop-filter: blur(16px);
 }
 
-body.vibe-theme-dark .vibe-visual-caption {
+body.vibe-theme-dark .vibe-campus-card figcaption {
   background: rgba(15, 13, 21, .72);
   color: var(--vibe-cream);
 }
 
-.vibe-visual-caption strong {
+.vibe-campus-card figcaption strong {
   display: block;
   font-size: 17px;
   font-weight: 950;
 }
 
-.vibe-visual-caption span {
+.vibe-campus-card figcaption span {
   display: block;
   margin-top: 5px;
   color: #6d6674;
@@ -538,7 +517,7 @@ body.vibe-theme-dark .vibe-visual-caption {
   font-weight: 800;
 }
 
-body.vibe-theme-dark .vibe-visual-caption span {
+body.vibe-theme-dark .vibe-campus-card figcaption span {
   color: rgba(240, 238, 233, .68);
 }
 
@@ -1219,8 +1198,10 @@ body.vibe-theme-dark .vibe-footer {
     font-size: 17px;
   }
 
-  .vibe-visual-card {
+  .vibe-campus-card,
+  .vibe-campus-card img {
     min-height: 300px;
+    height: 300px;
   }
 
   .vibe-focus-grid {

@@ -14,7 +14,7 @@ The website should feel academic, precise, visually intelligent, and practical. 
 
 ## Visual Direction
 
-The restored palette uses light blue as the primary color, teal as the calm scientific accent, pink as a restrained highlight, and plum for depth. The visual system should support both light and dark modes, with clear typography, strong information hierarchy, compact navigation, and polished but restrained interface details.
+The color1 palette uses light blue (#3DA5D9) as the primary color and red (#FF3864) as the secondary primary color, with teal (#368F8B), plum (#5D576B), and warm cream (#F0EEE9) as supporting colors. The visual system should support both light and dark modes, with clear typography, strong information hierarchy, compact navigation, and polished but restrained interface details.
 
 ## Accessibility
 
