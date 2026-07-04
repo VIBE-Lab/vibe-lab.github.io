@@ -18,23 +18,39 @@ permalink: /research/
     </p>
   </section>
 
-  <section class="vibe-research-feature" aria-label="Featured challenge">
-    <div>
-      <p class="vibe-section-kicker">Featured Challenge</p>
-      <h2>Cross-Organ and Cross-Scanner Adenocarcinoma Segmentation (COSAS 2024)</h2>
-      <p>
-        COSAS 2024 sits directly inside our interest in robust medical image analysis:
-        models must segment adenocarcinoma across changes in organ context, scanner
-        acquisition, staining appearance, and data domain. We use this challenge as a
-        research anchor for domain generalization, pathology segmentation, and reliable
-        evaluation under real-world variation.
-      </p>
+  <section class="vibe-research-feature vibe-cosas-feature" aria-labelledby="cosas-title">
+    <div class="vibe-feature-media">
+      <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/cosas.png" alt="COSAS 2024 challenge visual">
     </div>
-    <div class="vibe-feature-tags" aria-label="Research tags">
-      <span>Digital Pathology</span>
-      <span>Segmentation</span>
-      <span>Domain Generalization</span>
-      <span>Clinical Translation</span>
+
+    <div class="vibe-feature-copy">
+      <p class="vibe-section-kicker">Featured Project</p>
+      <h2 id="cosas-title">Cross-Organ and Cross-Scanner Adenocarcinoma Segmentation (COSAS 2024)</h2>
+      <p>
+        COSAS 2024 studies adenocarcinoma segmentation under the domain shifts that
+        make computational pathology hard to deploy: different organs, scanners,
+        staining appearances, and acquisition conditions. The challenge is a natural
+        research anchor for VIBE Lab because it connects robust visual intelligence,
+        pathology segmentation, and real-world evaluation.
+      </p>
+      <p>
+        We use this project to explore methods that generalize beyond a single
+        laboratory setting and to build resources that help the community compare
+        algorithms under clinically meaningful variation.
+      </p>
+
+      <div class="vibe-feature-tags" aria-label="Research tags">
+        <span>Digital Pathology</span>
+        <span>Adenocarcinoma Segmentation</span>
+        <span>Cross-Organ Generalization</span>
+        <span>Cross-Scanner Robustness</span>
+      </div>
+
+      <div class="vibe-feature-actions">
+        <a class="vibe-button vibe-button-primary" href="https://cosas.grand-challenge.org/">Challenge Homepage</a>
+        <a class="vibe-button" href="https://drive.google.com/drive/folders/1-F2XLnJ3lUr-sbiKW7qMpsF_ecrfQf4b?usp=sharing">Dataset Download</a>
+        <a class="vibe-button" href="https://doi.org/10.1145/3691521.3691537">Challenge Paper</a>
+      </div>
     </div>
   </section>
 
@@ -83,24 +99,38 @@ permalink: /research/
     </div>
   </section>
 
-  <section class="vibe-section" aria-label="Project pipeline">
+  <section class="vibe-section" aria-label="Future projects">
     <div class="vibe-section-heading">
-      <h2>Project Pipeline</h2>
+      <h2>More Projects</h2>
       <a href="{{ site.url }}{{ site.baseurl }}/resources">Datasets & Software</a>
     </div>
 
-    <div class="vibe-timeline">
-      <article>
-        <strong>Problem</strong>
-        <p>Start from pathology, clinical, and biomedical questions where visual AI can remove friction.</p>
+    <div class="vibe-project-list">
+      <article class="vibe-project-card">
+        <p class="vibe-section-kicker">In Progress</p>
+        <h3>Robust Computational Pathology</h3>
+        <p>
+          Methods for histopathology segmentation, detection, and classification that
+          remain useful across stain, scanner, site, and tumor variation.
+        </p>
       </article>
-      <article>
-        <strong>Model</strong>
-        <p>Build methods that are robust across datasets, organs, scanners, and acquisition variation.</p>
+
+      <article class="vibe-project-card">
+        <p class="vibe-section-kicker">In Progress</p>
+        <h3>Biomedical Visual Foundation Models</h3>
+        <p>
+          Adaptation and evaluation of visual models for biomedical settings where
+          data are scarce, noisy, heterogeneous, or expensive to annotate.
+        </p>
       </article>
-      <article>
-        <strong>Tool</strong>
-        <p>Release reusable datasets, models, interfaces, and demos when projects are ready to share.</p>
+
+      <article class="vibe-project-card">
+        <p class="vibe-section-kicker">Coming Soon</p>
+        <h3>Usable AI Research Software</h3>
+        <p>
+          Interfaces and tools that make biomedical AI models easier to inspect,
+          compare, and apply in practical workflows.
+        </p>
       </article>
     </div>
   </section>
