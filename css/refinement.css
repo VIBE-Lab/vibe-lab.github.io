@@ -126,4 +126,13 @@ a:focus-visible, button:focus-visible { outline:2px solid var(--vibe-primary); o
 .vibe-resource-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
 .vibe-resource-links .vibe-button { font-size:13px; }
 
+.vibe-footer a:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
 
+.vibe-footer a:focus-visible {
+  outline: 2px solid var(--vibe-primary);
+  outline-offset: 4px;
+  border-radius: 3px;
+}
