@@ -249,3 +249,24 @@ body.vibe-theme-dark .vibe-alumni-marquee .vibe-alumni-logo-window {
     padding: 14px;
   }
 }
+
+
+/* News annual timeline */
+.news-preview{max-width:1160px;}.news-preview .vibe-page-hero{padding-bottom:28px;}.news-archive{border-top:1px solid var(--vibe-line);}.news-year{display:grid;grid-template-columns:150px minmax(0,1fr);gap:32px;padding:36px 0;border-bottom:1px solid var(--vibe-line);}.news-year>h2{font-size:42px;font-weight:500;letter-spacing:-.04em;color:var(--vibe-muted);opacity:.7;margin:0;line-height:1;}.news-event{display:grid;grid-template-columns:84px minmax(0,1fr);gap:24px;padding:0 0 28px;}.news-event:last-child{padding-bottom:0;}.news-event+.news-event{padding-top:26px;border-top:1px solid var(--vibe-line);}.news-date{font-size:12px;letter-spacing:.09em;color:var(--vibe-muted);padding-top:3px;}.news-label{display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--vibe-primary);margin-bottom:10px;}.news-event h3{font-size:24px;line-height:1.4;margin:0 0 12px;font-weight:650;}.news-event p{color:var(--vibe-muted);font-size:16px;line-height:1.7;margin:0;}.news-event a{display:inline-block;margin-top:12px;color:var(--vibe-primary);font-size:14px;font-weight:600;}.news-feature{display:grid;grid-template-columns:minmax(0,1fr) 135px;gap:24px;}.news-feature img{width:135px;height:135px;object-fit:contain;border-radius:6px;}
+
+.news-entry-with-image{display:grid;grid-template-columns:minmax(0,1fr) 135px;gap:24px;align-items:start;}
+.news-entry>div{min-width:0;}
+.news-entry .news-person-photo{width:96px;height:96px;justify-self:end;object-fit:cover;object-position:center 35%;border-radius:7px;}
+.news-entry .news-project-image{width:135px;height:135px;object-fit:contain;border-radius:6px;}
+.news-description p{margin:0;}
+.news-description a{display:inline;margin:0;font-size:inherit;}
+@media(max-width:700px){
+ .news-year{grid-template-columns:1fr;gap:24px;}
+ .news-year>h2{font-size:30px;}
+ .news-event{grid-template-columns:60px minmax(0,1fr);gap:12px;}
+ .news-event h3{font-size:20px;}
+ .news-entry-with-image{grid-template-columns:minmax(0,1fr) 64px;gap:12px;}
+ .news-entry .news-person-photo,.news-entry .news-project-image{width:64px;height:64px;}
+}
+
+
