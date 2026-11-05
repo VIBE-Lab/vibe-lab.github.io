@@ -162,13 +162,8 @@ body.vibe-theme-dark .vibe-alumni-logo-window { background:rgba(225,229,235,.88)
 .vibe-alumni-logo img { display:block; width:auto; height:auto; max-width:100%; max-height:72px; object-fit:contain; border-radius:0; box-shadow:none; mix-blend-mode:multiply; }
 .vibe-alumni-marquee:focus-within .vibe-alumni-logo-track { animation-play-state:paused; }
 @keyframes vibe-university-flow { to { transform:translateX(-50%); } }
-@media(prefers-reduced-motion:reduce) {
- .vibe-alumni-logo-track { animation:none; }
- .vibe-alumni-logo-group[aria-hidden="true"] { display:none; }
- .vibe-alumni-motion { display:none; }
-}
 
-/* Logo 带融入原有页面背景 */
+
 .vibe-alumni-marquee .vibe-alumni-logo-window {
   background: transparent;
   backdrop-filter: none;
