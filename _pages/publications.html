@@ -6,11 +6,84 @@ sitemap: false
 permalink: /publications/
 ---
 
+<style>
+.vibe-paper-figure.vibe-paper-figure-image {
+  background: #fff;
+  padding: 55px 12px 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.vibe-paper-figure-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: contain;
+}
+.vibe-paper-row.vibe-paper-row-nofigure {
+  grid-template-columns: minmax(0, 1fr);
+}
+</style>
+
 <main class="vibe-page vibe-publications-page vibe-publications-list-page">
   <section class="vibe-paper-list" aria-label="Selected publications">
+        <article class="vibe-paper-row">
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="MIDOG">
+        <img src="{{ '/images/publications/p004.webp' | relative_url }}"
+             alt="Adaptive learning strategies for mitotic figure classification"
+             loading="lazy">
+      </div>
+      <div class="vibe-paper-body">
+        <h2>Adaptive Learning Strategies for Mitotic Figure Classification in MIDOG2025 Challenge</h2>
+        <p class="vibe-paper-authors">Biwen Meng, Xi Long, and Jingxin Liu</p>
+        <p class="vibe-paper-venue"><em>MIDOG 2025 Workshop, MICCAI (Springer proceedings)</em>, 2026</p>
+        <div class="vibe-paper-links">
+          <a href="https://doi.org/10.1007/978-3-032-25180-0_5">DOI</a>
+          <a href="https://arxiv.org/pdf/2509.02640">PDF</a>
+        </div>
+        <p class="vibe-paper-tags">Tag: Mitosis Detection, Domain Generalization</p>
+      </div>
+    </article>
+
     <article class="vibe-paper-row">
-      <div class="vibe-paper-figure" data-venue="ISBI" aria-label="Publication image placeholder">
-        <span>Image pending</span>
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="Electronics">
+        <img src="{{ '/images/publications/p042.webp' | relative_url }}"
+             alt="Evidence-guided vision-language query decoding framework"
+             loading="lazy">
+      </div>
+      <div class="vibe-paper-body">
+        <h2>Improving Cross-Organ Generalization in Histopathology Segmentation via Evidence-Guided Vision–Language Query Decoding</h2>
+        <p class="vibe-paper-authors">Biwen Meng, Jiahao Wang, and Jingxin Liu</p>
+        <p class="vibe-paper-venue"><em>Electronics</em>, 2026</p>
+        <div class="vibe-paper-links">
+          <a href="https://doi.org/10.3390/electronics15163691">DOI</a>
+        </div>
+        <p class="vibe-paper-tags">Tag: Vision-Language Models, Histopathology Segmentation, Domain Generalization</p>
+      </div>
+    </article>
+
+    <article class="vibe-paper-row">
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="LabMed Discovery">
+        <img src="{{ '/images/publications/p047.webp' | relative_url }}"
+             alt="Three-stage maturity model for artificial intelligence in computational pathology"
+             loading="lazy">
+      </div>
+      <div class="vibe-paper-body">
+        <h2>Adoption Paradox of Artificial Intelligence in Computational Pathology: A Three-Stage Maturity Model from Algorithms to Clinical Integration</h2>
+        <p class="vibe-paper-authors">Lu Cai<sup>*</sup>, Biwen Meng<sup>*</sup>, Jie Huang, Guanyu Ding, Min Ju, Wenwen Wang, Shijie Deng, Liqin Lai, Jin Wang, Chunxue Yang, Miao Ruan, Shugong Xu, Chaofu Wang, Jingxin Liu, and Qian Da</p>
+        <p><small>* These authors contributed equally.</small></p>
+        <p class="vibe-paper-venue"><em>LabMed Discovery</em>, 2026</p>
+        <div class="vibe-paper-links">
+          <a href="https://doi.org/10.1016/j.lmd.2026.100130">DOI</a>
+        </div>
+        <p class="vibe-paper-tags">Tag: Computational Pathology, Clinical Integration, Artificial Intelligence</p>
+      </div>
+    </article>
+    <article class="vibe-paper-row">
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="ISBI">
+        <img src="{{ '/images/publications/p006.webp' | relative_url }}"
+             alt="Test-time style transfer and diversity enhancement framework"
+             loading="lazy">
       </div>
       <div class="vibe-paper-body">
         <h2>Advancing Cross-Organ Domain Generalization with Test-Time Style Transfer and Diversity Enhancement</h2>
@@ -18,7 +91,7 @@ permalink: /publications/
         <p class="vibe-paper-venue"><em>IEEE International Symposium on Biomedical Imaging (ISBI)</em>, 2025</p>
         <div class="vibe-paper-links">
           <a href="https://doi.org/10.1109/ISBI60581.2025.10981139">DOI</a>
-          <a href="https://arxiv.org/abs/2503.18567">PDF</a>
+          <a href="https://arxiv.org/pdf/2503.18567">PDF</a>
         </div>
         <p class="vibe-paper-tags">Tag: Medical Image Segmentation, Domain Generalization</p>
       </div>
@@ -39,6 +112,18 @@ permalink: /publications/
       </div>
     </article>
 
+    <article class="vibe-paper-row vibe-paper-row-nofigure">
+      <div class="vibe-paper-body">
+        <h2>Salience-Enhanced Network for Metal Artifact Reduction in CT Imaging</h2>
+        <p class="vibe-paper-authors">Jiahao Wang, Yingxue Su, Keying Zhu, Michelle Avery Basarah, Yiheng Zhong, Yangchuan Liu, Yuxuan Zhao, Angelos Stefanidis, and Jingxin Liu</p>
+        <p class="vibe-paper-venue"><em>IEEE International Symposium on Biomedical Imaging (ISBI)</em>, 2025</p>
+        <div class="vibe-paper-links">
+          <a href="https://doi.org/10.1109/ISBI60581.2025.10980796">DOI</a>
+        </div>
+        <p class="vibe-paper-tags">Tag: CT Imaging, Metal Artifact Reduction</p>
+      </div>
+    </article>
+    
     <article class="vibe-paper-row">
       <div class="vibe-paper-figure" data-venue="BIBM" aria-label="Publication image placeholder">
         <span>Image pending</span>
@@ -85,6 +170,24 @@ permalink: /publications/
       </div>
     </article>
 
+    <article class="vibe-paper-row">
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="MIDOG">
+        <img src="{{ '/images/publications/p024.webp' | relative_url }}"
+             alt="Domain adaptive Cascade R-CNN framework"
+             loading="lazy">
+      </div>
+      <div class="vibe-paper-body">
+        <h2>Domain Adaptive Cascade R-CNN for MItosis DOmain Generalization (MIDOG) Challenge</h2>
+        <p class="vibe-paper-authors">Xi Long, Ying Cheng, Xiao Mu, Lian Liu, and Jingxin Liu</p>
+        <p class="vibe-paper-venue"><em>MICCAI 2021 Challenges: MIDOG, MOOD and Learn2Reg (Springer proceedings)</em>, 2022</p>
+        <div class="vibe-paper-links">
+          <a href="https://doi.org/10.1007/978-3-030-97281-3_11">DOI</a>
+          <a href="https://arxiv.org/pdf/2109.00965">PDF</a>
+        </div>
+        <p class="vibe-paper-tags">Tag: Mitosis Detection, Domain Adaptation</p>
+      </div>
+    </article>
+    
     <article class="vibe-paper-row">
       <div class="vibe-paper-figure" data-venue="TMI" aria-label="Publication image placeholder">
         <span>Image pending</span>
