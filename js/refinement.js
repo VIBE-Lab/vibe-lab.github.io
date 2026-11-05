@@ -87,6 +87,34 @@
     let keyboardFocus = false;
     let visible = true;
     let touching = false;
+    let frame = 0;
+    let moving = false;
+
+    // Avoid scroll-snap fighting the intermediate animation positions.
+    track.style.scrollSnapType = 'none';
+    track.style.scrollBehavior = 'auto';
+
+    function stopMotion() {
+      cancelAnimationFrame(frame);
+      moving = false;
+    }
+
+    function glideTo(target) {
+      stopMotion();
+      const from = track.scrollLeft;
+      const start = performance.now();
+      moving = true;
+      function tick(now) {
+        const progress = Math.min(1, (now - start) / 1400);
+        const eased = progress < 0.5
+          ? 4 * progress * progress * progress
+          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+        track.scrollLeft = from + (target - from) * eased;
+        if (progress < 1) frame = requestAnimationFrame(tick);
+        else { moving = false; schedule(); }
+      }
+      frame = requestAnimationFrame(tick);
+    }
 
     const imagesReady = Promise.all([...track.querySelectorAll('img')].map(img => {
       img.loading = 'eager';
@@ -95,7 +123,7 @@
 
     function schedule() {
       clearTimeout(timer);
-      if (hovered || keyboardFocus || touching || !visible || document.hidden) return;
+      if (hovered || keyboardFocus || touching || !visible || document.hidden || moving) return;
       timer = setTimeout(async () => {
         await imagesReady;
         if (hovered || keyboardFocus || touching || !visible || document.hidden) return;
@@ -106,17 +134,14 @@
           const card = track.firstElementChild;
           const step = card.getBoundingClientRect().width +
             (parseFloat(getComputedStyle(track).columnGap) || 0);
-          track.scrollTo({
-            left: Math.max(0, Math.min(max, track.scrollLeft + direction * step)),
-            behavior: 'smooth'
-          });
+          glideTo(Math.max(0, Math.min(max, track.scrollLeft + direction * step)));
         }
         schedule();
       }, 6000);
     }
 
     section.addEventListener('pointerenter', e => {
-      if (e.pointerType === 'mouse') { hovered = true; schedule(); }
+      if (e.pointerType === 'mouse') { hovered = true; stopMotion(); schedule(); }
     });
     section.addEventListener('pointerleave', e => {
       if (e.pointerType === 'mouse') { hovered = false; schedule(); }
@@ -131,17 +156,19 @@
       schedule();
     }, 0));
     section.addEventListener('click', schedule);
-    track.addEventListener('pointerdown', () => { touching = true; schedule(); });
+    track.addEventListener('pointerdown', () => { touching = true; stopMotion(); schedule(); });
     window.addEventListener('pointerup', () => { touching = false; schedule(); });
     window.addEventListener('pointercancel', () => { touching = false; schedule(); });
-    track.addEventListener('wheel', schedule, { passive: true });
-    document.addEventListener('visibilitychange', schedule);
+    track.addEventListener('wheel', () => { stopMotion(); schedule(); }, { passive: true });
+    document.addEventListener('visibilitychange', () => { stopMotion(); schedule(); });
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(entries => {
         visible = entries[0].isIntersecting;
+        if (!visible) stopMotion();
         schedule();
       }).observe(section);
     }
     imagesReady.then(schedule);
   });
 })();
+
