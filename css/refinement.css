@@ -1,0 +1,67 @@
+/* VIBE refinement v1: existing palette and backgrounds are inherited unchanged. */
+body.vibe-home-body, body.vibe-page-body { font-size:16px; }
+.vibe-page { padding-top:36px; }
+.vibe-page-hero { gap:16px; margin-bottom:32px; }
+.vibe-page-hero h1 { font-size:clamp(32px,3.3vw,44px); font-weight:750; line-height:1.18; letter-spacing:-.025em; }
+.vibe-page-hero p:last-child, .vibe-lead { font-size:17px; line-height:1.75; text-align:left; }
+.vibe-hero { gap:36px; padding:36px 0 28px; }
+.vibe-hero h1 { font-size:clamp(44px,5vw,64px); font-weight:800; line-height:1.05; letter-spacing:-.025em; }
+.vibe-hero-subtitle { font-size:22px; font-weight:650; line-height:1.4; }
+.vibe-section { margin-top:40px; }
+.vibe-section-heading h2, .vibe-member-section h2 { font-size:28px; font-weight:750; line-height:1.25; }
+.vibe-focus-card, .vibe-page-card, .vibe-resource-card, .vibe-news-panel, .vibe-campus-card,
+.vibe-cosas-strip, .vibe-alumni-panel, .vibe-paper-figure, .vibe-member-card,
+.vibe-member-card:hover, .vibe-member-card:focus { border-radius:10px; box-shadow:none; }
+body.vibe-theme-dark .vibe-member-card, body.vibe-theme-dark .vibe-page-card,
+body.vibe-theme-dark .vibe-resource-card, body.vibe-theme-dark .vibe-alumni-panel { box-shadow:none; }
+.vibe-focus-card h3, .vibe-page-card h3, .vibe-resource-card h3 { font-weight:700; line-height:1.35; }
+.vibe-focus-card p, .vibe-page-card p, .vibe-resource-card p { font-size:16px; line-height:1.65; }
+.vibe-member-card img, .vibe-avatar-fallback { border-radius:10px; }
+.vibe-member-card h3 { font-size:21px; font-weight:750; line-height:1.25; }
+.vibe-member-card-featured h3 { font-size:28px; }
+.vibe-member-card p { font-size:16px; line-height:1.6; }
+.vibe-button, .vibe-button:hover, .vibe-button:focus { min-height:42px; padding:0 16px; border-radius:7px; font-size:14px; font-weight:650; box-shadow:none; }
+.vibe-paper-list { gap:28px; }
+.vibe-paper-row { padding-bottom:28px; }
+.vibe-paper-body h2 { font-size:clamp(22px,2vw,27px); line-height:1.35; font-weight:700; text-wrap:initial; }
+.vibe-paper-authors { font-size:16px; line-height:1.65; }
+.vibe-paper-venue, .vibe-paper-tags { font-size:16px; line-height:1.6; }
+.vibe-paper-links a, .vibe-paper-links a:nth-child(n),
+.vibe-paper-links a:nth-child(n):focus { min-height:36px; min-width:66px; padding:0 14px; border:1px solid var(--vibe-line); border-radius:6px; background:var(--vibe-surface); color:var(--vibe-ink); font-size:13px; font-weight:650; box-shadow:none; }
+.vibe-paper-links a:nth-child(n):hover { border-color:var(--vibe-primary); color:var(--vibe-primary); background:var(--vibe-surface); }
+.vibe-cosas-copy h2 { font-size:clamp(25px,2.6vw,34px); line-height:1.3; font-weight:750; }
+.cosas-papers-page .vibe-paper-row { border-radius:10px; }
+.cosas-project-intro h1 { font-size:clamp(32px,3.3vw,44px); font-weight:750; }
+a:focus-visible, button:focus-visible { outline:2px solid var(--vibe-primary); outline-offset:4px; }
+/* Manual horizontal research carousel. No automatic motion; remains usable without JS. */
+.vibe-highlights-heading { display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+.vibe-highlights-tools { display:flex; align-items:center; gap:10px; }
+.vibe-scroll-button { display:none; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid var(--vibe-line); border-radius:7px; color:var(--vibe-ink); background:var(--vibe-surface); font-size:20px; cursor:pointer; }
+.vibe-highlights[data-enhanced] .vibe-scroll-button { display:inline-flex; }
+.vibe-scroll-button:disabled { opacity:.35; cursor:default; }
+.vibe-highlight-track { display:grid; grid-auto-flow:column; grid-auto-columns:calc((100% - 40px)/3); gap:20px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding:1px; padding:4px 1px 14px; scrollbar-width:thin; scrollbar-color:var(--vibe-line) transparent; }
+.vibe-highlight-card { min-width:0; display:flex; flex-direction:column; border:1px solid var(--vibe-line); border-radius:10px; background:var(--vibe-surface); overflow:hidden; scroll-snap-align:start; scroll-margin:1px; }
+.vibe-highlight-image { display:flex; align-items:center; justify-content:center; height:172px; padding:20px; background:var(--vibe-surface); border-bottom:1px solid var(--vibe-line); }
+.vibe-highlight-image img { max-width:100%; max-height:100%; object-fit:contain; border-radius:0; box-shadow:none; }
+.vibe-highlight-copy { padding:20px; display:flex; flex-direction:column; flex:1; }
+.vibe-highlight-meta { font-size:12px; font-weight:650; color:var(--vibe-muted); margin:0 0 12px; }
+.vibe-highlight-copy h3 { font-size:19px; line-height:1.45; font-weight:700; margin:0 0 20px; }
+.vibe-highlight-copy h3 a { color:var(--vibe-ink); text-decoration:none; }
+.vibe-highlight-copy h3 a:hover { color:var(--vibe-primary); }
+.vibe-highlight-copy .vibe-paper-links { margin-top:auto; padding-top:8px; }
+.vibe-highlight-hint { font-size:13px; color:var(--vibe-muted); margin:8px 0 0; }
+@media(max-width:1000px) { .vibe-highlight-track { grid-auto-columns:calc((100% - 20px)/2); } }
+@media(max-width:640px) {
+ .vibe-page { padding-top:28px; }
+ .vibe-page-hero h1 { font-size:32px; }
+ .vibe-hero { gap:28px; }
+ .vibe-hero h1 { font-size:44px; }
+ .vibe-hero-subtitle { font-size:20px; }
+ .vibe-lead, .vibe-page-hero p:last-child { font-size:16px; }
+ .vibe-highlight-track { grid-auto-columns:86%; gap:16px; }
+ .vibe-highlights-tools { width:100%; }
+ .vibe-highlights-tools > a { margin-right:auto; }
+ .vibe-member-card, .vibe-member-card:hover, .vibe-member-card:focus { padding:18px; }
+ .vibe-paper-body h2 { font-size:22px; }
+}
+@media(prefers-reduced-motion:reduce) { .vibe-highlight-track { scroll-behavior:auto; } }
