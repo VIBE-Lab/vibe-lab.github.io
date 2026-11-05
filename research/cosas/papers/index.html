@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VIBE Lab - COSAS Papers</title>
+  <meta name="description" content="Challenge overview and benchmark studies related to COSAS.">
+  <link rel="stylesheet" href="https://vibe-lab.github.io/css/main.css">
+  <link rel="canonical" href="https://vibe-lab.github.io/research/cosas/papers/">
+<link rel="icon" type="image/svg+xml" href="https://vibe-lab.github.io/images/logopic/vibe-logo-mark.svg">
+<link rel="alternate icon" type="image/png" href="https://vibe-lab.github.io/images/logopic/favicon.png">
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26505344-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<link rel="stylesheet" href="/css/refinement.css">
+  
+</head>
+
+
+  <body class="vibe-page-body">
+
+    <script>
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem("vibe-theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("vibe-theme-dark");
+      }
+    } catch (error) {}
+  })();
+</script>
+
+<header class="vibe-site-header" role="banner">
+  <div class="vibe-header-inner">
+    <a class="vibe-brand" href="https://vibe-lab.github.io/" aria-label="VIBE Lab home">
+      <span class="vibe-brand-logo-wrap" aria-hidden="true">
+        <img class="vibe-brand-logo" src="https://vibe-lab.github.io/images/logopic/vibe-logo-mark.svg" alt="">
+      </span>
+      <span class="vibe-brand-text" aria-hidden="true">
+        <strong>VIBE Lab</strong>
+        <small>Visual Intelligence and Biomedical Exploration</small>
+      </span>
+      <span class="vibe-sr-only">VIBE Lab - Visual Intelligence and Biomedical Exploration</span>
+    </a>
+
+    <input class="vibe-nav-toggle" type="checkbox" id="vibe-nav-toggle" aria-label="Toggle navigation">
+    <label class="vibe-nav-button" for="vibe-nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="vibe-nav" aria-label="Primary navigation">
+      <a href="https://vibe-lab.github.io/">Home</a>
+      <a href="https://vibe-lab.github.io/research">Research</a>
+      <a href="https://vibe-lab.github.io/publications">Publications</a>
+      <a href="https://vibe-lab.github.io/team">Team</a>
+      <a href="https://vibe-lab.github.io/resources">Resources</a>
+      <a href="https://vibe-lab.github.io/allnews.html">News</a>
+    </nav>
+
+    <button class="vibe-theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <span class="vibe-theme-track" aria-hidden="true"><span class="vibe-theme-dot"></span></span>
+      <span class="vibe-theme-label">Light</span>
+    </button>
+  </div>
+</header>
+
+<script>
+  (function () {
+    function setTheme(theme) {
+      var dark = theme === "dark";
+      document.body.classList.toggle("vibe-theme-dark", dark);
+      var label = document.querySelector(".vibe-theme-label");
+      if (label) {
+        label.textContent = dark ? "Dark" : "Light";
+      }
+      try {
+        localStorage.setItem("vibe-theme", dark ? "dark" : "light");
+      } catch (error) {}
+    }
+
+    var button = document.querySelector(".vibe-theme-toggle");
+    if (button) {
+      button.addEventListener("click", function () {
+        setTheme(document.body.classList.contains("vibe-theme-dark") ? "light" : "dark");
+      });
+    }
+
+    setTheme(document.body.classList.contains("vibe-theme-dark") ? "dark" : "light");
+  })();
+</script>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <style>
+.cosas-papers-header {
+  margin-bottom: 36px;
+}
+
+.cosas-back-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  color: var(--vibe-muted, #626674);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.cosas-back-link:hover {
+  color: var(--vibe-text);
+  text-decoration: underline;
+}
+
+.cosas-project-intro {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.cosas-project-image {
+  display: block;
+  width: 120px;
+  height: 120px;
+  flex: 0 0 120px;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+.cosas-project-intro h1 {
+  margin: 8px 0 12px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+}
+
+.cosas-project-description {
+  max-width: 780px;
+  margin: 0;
+  color: var(--vibe-muted, #626674);
+  line-height: 1.7;
+}
+
+.cosas-papers-page .vibe-paper-row {
+  display: block;
+  padding: 30px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(128, 128, 128, 0.22);
+  border-radius: 18px;
+}
+
+.cosas-papers-page .vibe-paper-figure,
+.cosas-papers-page .vibe-paper-tags {
+  display: none;
+}
+
+.cosas-paper-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.cosas-paper-type {
+  color: var(--vibe-muted, #626674);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cosas-accepted {
+  padding: 5px 11px;
+  border: 1px solid rgba(53, 166, 211, 0.5);
+  border-radius: 999px;
+  background: rgba(53, 166, 211, 0.12);
+  color: var(--vibe-text, #263040);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.cosas-papers-page .vibe-paper-body h2 {
+  margin-top: 0;
+  font-size: clamp(23px, 2.5vw, 32px);
+  line-height: 1.35;
+}
+
+@media (max-width: 640px) {
+  .cosas-project-intro {
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cosas-project-image {
+    width: 72px;
+    height: 72px;
+    flex-basis: 72px;
+    border-radius: 12px;
+  }
+
+  .cosas-papers-page .vibe-paper-row {
+    padding: 22px 18px;
+  }
+}
+</style>
+
+<main class="vibe-page vibe-publications-page vibe-publications-list-page cosas-papers-page">
+
+  <section class="cosas-papers-header" aria-label="COSAS papers">
+    <a class="cosas-back-link" href="/research/">
+      ← Back to Research
+    </a>
+
+    <div class="cosas-project-intro">
+      <img class="cosas-project-image"
+           src="/images/pubpic/cosas.png"
+           alt="COSAS 2024 challenge">
+
+      <div>
+        <p class="vibe-eyebrow">COSAS 2024</p>
+        <h1>COSAS Publications</h1>
+        <p class="cosas-project-description">
+          Challenge overview and benchmark studies on domain generalization
+          for cross-organ and cross-scanner adenocarcinoma segmentation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="vibe-paper-list" aria-label="COSAS publications">
+
+    <article class="vibe-paper-row">
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="MedIA">
+        <img src="/images/pubpic/cosas.png"
+             alt="COSAS 2024 challenge"
+             loading="lazy">
+      </div>
+
+      <div class="vibe-paper-body">
+                <div class="cosas-paper-meta">
+          <span class="cosas-paper-type">Challenge Overview</span>
+          <span class="cosas-accepted">Accepted</span>
+        </div>
+        <h2>The COSAS 2024 Challenge: Cross-Organ and Cross-Scanner Adenocarcinoma Segmentation for Domain Generalization in Computational Pathology</h2>
+
+        <p class="vibe-paper-venue">
+          <em>Medical Image Analysis</em> · Accepted in 2026
+        </p>
+
+        <p>
+          Challenge overview and evaluation of domain generalization
+          across organs and scanners.
+        </p>
+
+        <p class="vibe-paper-tags">
+          Tag: Histopathology Segmentation, Domain Generalization, Challenge
+        </p>
+      </div>
+    </article>
+
+    <article class="vibe-paper-row">
+      <div class="vibe-paper-figure vibe-paper-figure-image" data-venue="ICB SIP">
+        <img src="/images/pubpic/cosas.png"
+             alt="COSAS project visual"
+             loading="lazy">
+      </div>
+
+      <div class="vibe-paper-body">
+        <div class="cosas-paper-meta">
+          <span class="cosas-paper-type">Benchmark Study</span>
+        </div>
+        <h2>Exploring Domain Generalization in Semantic Segmentation for Digital Histopathology: A Comparative Evaluation of Deep Learning Models</h2>
+
+        <p class="vibe-paper-authors">
+          Ruochen Liu, Hongyan Xiao, Yuyao Wang, Minghao Zhang,
+          Biwen Meng, Xi Long, and Jingxin Liu
+        </p>
+
+        <p class="vibe-paper-venue">
+          <em>2024 9th International Conference on Biomedical Signal and Image Processing</em>,
+          2024
+        </p>
+
+        <p>
+          A comparative benchmark study of deep learning models for
+          domain generalization in digital histopathology segmentation.
+        </p>
+
+        <div class="vibe-paper-links">
+          <a href="https://doi.org/10.1145/3691521.3691537">DOI</a>
+        </div>
+
+        <p class="vibe-paper-tags">
+          Tag: Digital Histopathology, Domain Generalization, Benchmark
+        </p>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+      </div>
+    </div>
+
+    <footer class="vibe-footer" role="contentinfo">
+  <div class="vibe-footer-inner">
+        <div class="vibe-footer-details">
+      <p>&copy; 2026 VIBE Lab</p>
+      <p>
+        <a href="https://www.xjtlu.edu.cn/en">
+          Xi'an Jiaotong-Liverpool University
+        </a>
+        · Taicang, China
+      </p>
+    </div>
+
+    <div class="vibe-footer-contact">
+      <a href="mailto:jingxin.liu@xjtlu.edu.cn">
+        jingxin.liu@xjtlu.edu.cn
+      </a>
+      <a href="https://scholar.xjtlu.edu.cn/en/persons/JingxinLiu/">
+        Lab Director →
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://vibe-lab.github.io/js/bootstrap.min.js"></script>
+
+
+  </body>
+
+</html>

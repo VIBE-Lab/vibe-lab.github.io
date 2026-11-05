@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vision Intelligence and Biomedical Exploration Lab - Research</title>
+  <meta name="description" content="Research directions, projects, and challenges from VIBE Lab.">
+  <link rel="stylesheet" href="https://vibe-lab.github.io/css/main.css">
+  <link rel="canonical" href="https://vibe-lab.github.io/research/">
+<link rel="icon" type="image/svg+xml" href="https://vibe-lab.github.io/images/logopic/vibe-logo-mark.svg">
+<link rel="alternate icon" type="image/png" href="https://vibe-lab.github.io/images/logopic/favicon.png">
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-26505344-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<link rel="stylesheet" href="/css/refinement.css">
+  
+</head>
+
+
+  <body class="vibe-page-body">
+
+    <script>
+  (function () {
+    try {
+      var savedTheme = localStorage.getItem("vibe-theme");
+      if (savedTheme === "dark") {
+        document.body.classList.add("vibe-theme-dark");
+      }
+    } catch (error) {}
+  })();
+</script>
+
+<header class="vibe-site-header" role="banner">
+  <div class="vibe-header-inner">
+    <a class="vibe-brand" href="https://vibe-lab.github.io/" aria-label="VIBE Lab home">
+      <span class="vibe-brand-logo-wrap" aria-hidden="true">
+        <img class="vibe-brand-logo" src="https://vibe-lab.github.io/images/logopic/vibe-logo-mark.svg" alt="">
+      </span>
+      <span class="vibe-brand-text" aria-hidden="true">
+        <strong>VIBE Lab</strong>
+        <small>Visual Intelligence and Biomedical Exploration</small>
+      </span>
+      <span class="vibe-sr-only">VIBE Lab - Visual Intelligence and Biomedical Exploration</span>
+    </a>
+
+    <input class="vibe-nav-toggle" type="checkbox" id="vibe-nav-toggle" aria-label="Toggle navigation">
+    <label class="vibe-nav-button" for="vibe-nav-toggle" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="vibe-nav" aria-label="Primary navigation">
+      <a href="https://vibe-lab.github.io/">Home</a>
+      <a href="https://vibe-lab.github.io/research">Research</a>
+      <a href="https://vibe-lab.github.io/publications">Publications</a>
+      <a href="https://vibe-lab.github.io/team">Team</a>
+      <a href="https://vibe-lab.github.io/resources">Resources</a>
+      <a href="https://vibe-lab.github.io/allnews.html">News</a>
+    </nav>
+
+    <button class="vibe-theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <span class="vibe-theme-track" aria-hidden="true"><span class="vibe-theme-dot"></span></span>
+      <span class="vibe-theme-label">Light</span>
+    </button>
+  </div>
+</header>
+
+<script>
+  (function () {
+    function setTheme(theme) {
+      var dark = theme === "dark";
+      document.body.classList.toggle("vibe-theme-dark", dark);
+      var label = document.querySelector(".vibe-theme-label");
+      if (label) {
+        label.textContent = dark ? "Dark" : "Light";
+      }
+      try {
+        localStorage.setItem("vibe-theme", dark ? "dark" : "light");
+      } catch (error) {}
+    }
+
+    var button = document.querySelector(".vibe-theme-toggle");
+    if (button) {
+      button.addEventListener("click", function () {
+        setTheme(document.body.classList.contains("vibe-theme-dark") ? "light" : "dark");
+      });
+    }
+
+    setTheme(document.body.classList.contains("vibe-theme-dark") ? "dark" : "light");
+  })();
+</script>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <main class="vibe-page vibe-research-page">
+  <section class="vibe-page-hero" aria-label="Research overview">
+    <p class="vibe-eyebrow">Research</p>
+    <h1>Visual intelligence for biomedical problems that matter.</h1>
+    <p>
+      VIBE Lab develops AI methods for medical image analysis with a strong focus on
+      practical biomedical use. We work on segmentation, representation learning,
+      computational pathology, multimodal biomedical AI, and usable research software
+      that can help models move from papers into real workflows.
+    </p>
+  </section>
+
+<section aria-label="Research directions" class="vibe-section rf-concept rf-tabs-concept">
+ <div class="vibe-section-heading">
+  <h2>
+   Research Directions
+  </h2>
+  <a href="/publications/">
+   View publications
+  </a>
+ </div>
+ <div class="rf-tabs-layout">
+  <div aria-label="Research areas" aria-orientation="vertical" class="rf-tablist" role="tablist">
+   <button aria-controls="rf-panel-0" aria-selected="true" class="rf-tab" id="rf-tab-0" role="tab" tabindex="0" type="button">
+    <span>
+     Computational Pathology
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+   <button aria-controls="rf-panel-1" aria-selected="false" class="rf-tab" id="rf-tab-1" role="tab" tabindex="-1" type="button">
+    <span>
+     Biomedical Image Analysis
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+   <button aria-controls="rf-panel-2" aria-selected="false" class="rf-tab" id="rf-tab-2" role="tab" tabindex="-1" type="button">
+    <span>
+     Domain Generalization
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+   <button aria-controls="rf-panel-3" aria-selected="false" class="rf-tab" id="rf-tab-3" role="tab" tabindex="-1" type="button">
+    <span>
+     Biomedical Benchmarks &amp; Datasets
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+  </div>
+  <div>
+   <article aria-labelledby="rf-tab-0" class="rf-tabs-panel" id="rf-panel-0" role="tabpanel">
+    <div class="rf-tabs-image rf-real-image">
+     <div class="rf-real-pair">
+      <figure>
+       <img alt="Original histopathology tissue" loading="eager" decoding="async" src="/images/concepts/real-v2/tissue-image.png"/>
+       <figcaption>
+        Tissue image
+       </figcaption>
+      </figure>
+      <figure>
+       <img alt="Annotation overlay on the same tissue" loading="eager" decoding="async" src="/images/concepts/real-v2/tissue-overlay.png"/>
+       <figcaption>
+        Annotation overlay
+       </figcaption>
+      </figure>
+     </div>
+    </div>
+    <h3>
+     Computational Pathology
+    </h3>
+    <p>
+     Whole-slide image analysis, tumor segmentation, tissue phenotyping, and
+          quantitative pathology tools for more precise biomedical interpretation.
+    </p>
+   </article>
+   <article aria-labelledby="rf-tab-1" class="rf-tabs-panel" hidden="" id="rf-panel-1" role="tabpanel">
+    <div class="rf-tabs-image rf-real-image">
+     <img alt="Original image, DAB channel, and stain intensity description from Figure 3" loading="eager" decoding="async" src="/images/concepts/real-v2/stain-comparison.png"/>
+    </div>
+    <h3>
+     Biomedical Image Analysis
+    </h3>
+    <p>
+     Robust denoising, segmentation, microscopy analysis, and visual measurement
+          methods designed around real data quality and acquisition constraints.
+    </p>
+   </article>
+   <article aria-labelledby="rf-tab-2" class="rf-tabs-panel" hidden="" id="rf-panel-2" role="tabpanel">
+    <div class="rf-tabs-image rf-new-directions rf-organs">
+     <figure>
+      <img alt="colorectal histopathology examples" loading="eager" decoding="async" src="/images/concepts/real-v2/organ-colorectal.png"/>
+      <figcaption>
+       Colorectal
+      </figcaption>
+     </figure>
+     <figure>
+      <img alt="gastric histopathology examples" loading="eager" decoding="async" src="/images/concepts/real-v2/organ-gastric.png"/>
+      <figcaption>
+       Gastric
+      </figcaption>
+     </figure>
+     <figure>
+      <img alt="pancreatic histopathology examples" loading="eager" decoding="async" src="/images/concepts/real-v2/organ-pancreatic.png"/>
+      <figcaption>
+       Pancreatic
+      </figcaption>
+     </figure>
+    </div>
+    <h3>
+     Domain Generalization
+    </h3>
+    <p>
+     Robust visual intelligence across organs, scanners, staining conditions, and acquisition shifts, with a focus on generalizable biomedical image analysis.
+    </p>
+   </article>
+   <article aria-labelledby="rf-tab-3" class="rf-tabs-panel" hidden="" id="rf-panel-3" role="tabpanel">
+    <div class="rf-tabs-image rf-new-directions rf-benchmark">
+     <img alt="COSAS dataset collection, composition, model benchmarking and evaluation overview" loading="eager" decoding="async" src="/images/concepts/cosas-overview.png"/>
+    </div>
+    <h3>
+     Biomedical Benchmarks &amp; Datasets
+    </h3>
+    <p>
+     Biomedical datasets, challenges, and reproducible evaluation that connect computational pathology research with practical assessment of AI methods.
+    </p>
+    <a class="rf-concept-link" href="/research/cosas/papers/">
+     Explore COSAS →
+    </a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<script>
+(() => {
+  const root = document.querySelector('.rf-tabs-concept');
+  if (!root) return;
+
+  const tabs = [...root.querySelectorAll('[role="tab"]')];
+  const panels = tabs.map(tab =>
+    document.getElementById(tab.getAttribute('aria-controls'))
+  );
+  if (!tabs.length || panels.some(panel => !panel)) return;
+
+  let current = Math.max(
+    0,
+    tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true')
+  );
+  let timer;
+  let hovering = false;
+  let keyboardFocus = false;
+  let visible = true;
+  let revision = 0;
+  let animation;
+
+  // 立即请求所有方向的图片，并等待图片解码完成。
+  const ready = panels.map(panel =>
+    Promise.all([...panel.querySelectorAll('img')].map(image => {
+      image.loading = 'eager';
+      image.decoding = 'async';
+
+      if (image.decode) {
+        return image.decode().catch(() => {});
+      }
+
+      if (image.complete) return Promise.resolve();
+
+      return new Promise(resolve => {
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', resolve, { once: true });
+      });
+    }))
+  );
+
+  function paused() {
+    return hovering || keyboardFocus || !visible || document.hidden;
+  }
+
+  function show(index) {
+    animation?.cancel();
+    current = index;
+
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.tabIndex = i === index ? 0 : -1;
+      panels[i].hidden = i !== index;
+    });
+
+    // 只淡入，不移动布局。
+    if (panels[index].animate) {
+      animation = panels[index].animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: 220, easing: 'ease-out' }
+      );
+    }
+  }
+
+  async function schedule() {
+    clearTimeout(timer);
+    const token = ++revision;
+    if (paused()) return;
+
+    await ready[current];
+    if (token !== revision || paused()) return;
+
+    timer = setTimeout(async () => {
+      const next = (current + 1) % tabs.length;
+
+      await ready[next];
+      if (token !== revision || paused()) return;
+
+      show(next);
+      schedule();
+    }, 6000);
+  }
+
+  async function choose(index) {
+    clearTimeout(timer);
+    const token = ++revision;
+
+    await ready[index];
+    if (token !== revision) return;
+
+    show(index);
+    schedule();
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => choose(index));
+
+    tab.addEventListener('keydown', event => {
+      let next;
+
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        next = (index + 1) % tabs.length;
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        next = (index - 1 + tabs.length) % tabs.length;
+      } else if (event.key === 'Home') {
+        next = 0;
+      } else if (event.key === 'End') {
+        next = tabs.length - 1;
+      }
+
+      if (next !== undefined) {
+        event.preventDefault();
+        tabs[next].focus();
+        choose(next);
+      }
+    });
+  });
+
+  root.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse') return;
+    hovering = true;
+    schedule();
+  });
+
+  root.addEventListener('pointerleave', event => {
+    if (event.pointerType !== 'mouse') return;
+    hovering = false;
+    schedule();
+  });
+
+  root.addEventListener('focusin', event => {
+    keyboardFocus = event.target.matches(':focus-visible');
+    schedule();
+  });
+
+  root.addEventListener('focusout', () => {
+    setTimeout(() => {
+      keyboardFocus = root.contains(document.activeElement) &&
+        document.activeElement.matches(':focus-visible');
+      schedule();
+    }, 0);
+  });
+
+  document.addEventListener('visibilitychange', schedule);
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      schedule();
+    }).observe(root);
+  }
+
+  schedule();
+})();
+</script>
+
+  
+  <section class="vibe-cosas-strip" aria-labelledby="cosas-title">
+    <div class="vibe-cosas-logo">
+      <img src="https://vibe-lab.github.io/images/pubpic/cosas.png" alt="COSAS 2024 challenge visual">
+    </div>
+
+    <div class="vibe-cosas-copy">
+      <p class="vibe-section-kicker">Featured Project</p>
+      <h2 id="cosas-title">Cross-Organ and Cross-Scanner Adenocarcinoma Segmentation (COSAS 2024)</h2>
+      <p>
+        A domain generalization challenge for adenocarcinoma segmentation across
+        organ, scanner, staining, and acquisition shifts. COSAS connects our work
+        in robust visual intelligence, computational pathology, and practical
+        biomedical AI evaluation.
+      </p>
+
+      <div class="vibe-cosas-tags" aria-label="Research tags">
+        <span>Digital Pathology</span>
+        <span>Adenocarcinoma Segmentation</span>
+        <span>Domain Generalization</span>
+      </div>
+    </div>
+
+    <div class="vibe-cosas-actions">
+      <a class="vibe-button vibe-button-primary" href="https://cosas.grand-challenge.org/">Challenge</a>
+      <a class="vibe-button" href="https://drive.google.com/drive/folders/1-F2XLnJ3lUr-sbiKW7qMpsF_ecrfQf4b?usp=sharing">Dataset</a>
+      <a class="vibe-button" href="/research/cosas/papers/">Paper</a>
+    </div>
+  </section>
+
+  
+
+</main>
+
+      </div>
+    </div>
+
+    <footer class="vibe-footer" role="contentinfo">
+  <div class="vibe-footer-inner">
+        <div class="vibe-footer-details">
+      <p>&copy; 2026 VIBE Lab</p>
+      <p>
+        <a href="https://www.xjtlu.edu.cn/en">
+          Xi'an Jiaotong-Liverpool University
+        </a>
+        · Taicang, China
+      </p>
+    </div>
+
+    <div class="vibe-footer-contact">
+      <a href="mailto:jingxin.liu@xjtlu.edu.cn">
+        jingxin.liu@xjtlu.edu.cn
+      </a>
+      <a href="https://scholar.xjtlu.edu.cn/en/persons/JingxinLiu/">
+        Lab Director →
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://vibe-lab.github.io/js/bootstrap.min.js"></script>
+
+
+  </body>
+
+</html>
