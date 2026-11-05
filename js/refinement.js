@@ -33,7 +33,7 @@
     const toggle = section.querySelector('.vibe-news-toggle');
     if (!viewport || !toggle) return;
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
-    let paused = motion.matches, hovered = false, visible = true, holdUntil = 0, last = 0, frame = 0, scrollPosition = viewport.scrollTop, endReachedAt = 0;
+    let paused = false, hovered = false, visible = true, holdUntil = 0, last = 0, frame = 0, scrollPosition = viewport.scrollTop, endReachedAt = 0;
     const now = Date.now();
     section.querySelectorAll('time[datetime]').forEach(time => {
       const stamp = new Date(time.dateTime + 'T00:00:00').getTime();
@@ -52,7 +52,6 @@
     section.addEventListener('mouseleave', () => { hovered = false; last = 0; });
     ['wheel','touchstart','pointerdown','keydown'].forEach(name => viewport.addEventListener(name, () => { holdUntil = performance.now() + 15000; }, {passive:true}));
     if ('IntersectionObserver' in window) new IntersectionObserver(entries => { visible = entries[0].isIntersecting; last = 0; }).observe(section);
-    motion.addEventListener('change', e => { if(e.matches) paused = true; last = 0; update(); });
     document.addEventListener('visibilitychange', () => { last = 0; });
     const tick = stamp => {
       const dt = last ? Math.min((stamp-last)/1000, .25) : 0;
