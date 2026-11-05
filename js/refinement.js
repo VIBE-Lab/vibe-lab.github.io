@@ -73,3 +73,75 @@
     window.addEventListener('pageshow', event => { if (event.persisted) { last=0; frame=setInterval(() => tick(performance.now()), 50); } });
   });
 })();
+
+/* Selected Publications: automatic card scrolling. Keep existing arrow handlers. */
+(() => {
+  document.querySelectorAll('.vibe-highlights').forEach(section => {
+    const track = section.querySelector('.vibe-highlight-track');
+    if (!track || track.dataset.autoScrollReady) return;
+    track.dataset.autoScrollReady = 'true';
+
+    let direction = 1;
+    let timer;
+    let hovered = false;
+    let keyboardFocus = false;
+    let visible = true;
+    let touching = false;
+
+    const imagesReady = Promise.all([...track.querySelectorAll('img')].map(img => {
+      img.loading = 'eager';
+      return img.decode ? img.decode().catch(() => {}) : Promise.resolve();
+    }));
+
+    function schedule() {
+      clearTimeout(timer);
+      if (hovered || keyboardFocus || touching || !visible || document.hidden) return;
+      timer = setTimeout(async () => {
+        await imagesReady;
+        if (hovered || keyboardFocus || touching || !visible || document.hidden) return;
+        const max = Math.max(0, track.scrollWidth - track.clientWidth);
+        if (max > 2) {
+          if (track.scrollLeft >= max - 2) direction = -1;
+          else if (track.scrollLeft <= 2) direction = 1;
+          const card = track.firstElementChild;
+          const step = card.getBoundingClientRect().width +
+            (parseFloat(getComputedStyle(track).columnGap) || 0);
+          track.scrollTo({
+            left: Math.max(0, Math.min(max, track.scrollLeft + direction * step)),
+            behavior: 'smooth'
+          });
+        }
+        schedule();
+      }, 6000);
+    }
+
+    section.addEventListener('pointerenter', e => {
+      if (e.pointerType === 'mouse') { hovered = true; schedule(); }
+    });
+    section.addEventListener('pointerleave', e => {
+      if (e.pointerType === 'mouse') { hovered = false; schedule(); }
+    });
+    section.addEventListener('focusin', e => {
+      keyboardFocus = e.target.matches(':focus-visible');
+      schedule();
+    });
+    section.addEventListener('focusout', () => setTimeout(() => {
+      keyboardFocus = section.contains(document.activeElement) &&
+        document.activeElement.matches(':focus-visible');
+      schedule();
+    }, 0));
+    section.addEventListener('click', schedule);
+    track.addEventListener('pointerdown', () => { touching = true; schedule(); });
+    window.addEventListener('pointerup', () => { touching = false; schedule(); });
+    window.addEventListener('pointercancel', () => { touching = false; schedule(); });
+    track.addEventListener('wheel', schedule, { passive: true });
+    document.addEventListener('visibilitychange', schedule);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        visible = entries[0].isIntersecting;
+        schedule();
+      }).observe(section);
+    }
+    imagesReady.then(schedule);
+  });
+})();
