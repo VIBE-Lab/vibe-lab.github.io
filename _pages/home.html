@@ -25,12 +25,48 @@ permalink: /
     </div>
   </div>
 
+  <aside class="vibe-home-sidebar" aria-label="Campus and lab news">
   <figure class="vibe-campus-card" aria-label="XJTLU campus illustration">
     <img src="{{ site.url }}{{ site.baseurl }}/images/home/xjtlu-campus.png" alt="Illustrated view of the XJTLU campus">
     <figcaption>
       <strong>XJTLU campus, Taicang</strong>
     </figcaption>
   </figure>
+        <section class="vibe-sidebar-news" aria-labelledby="vibe-news-heading">
+      <div class="vibe-sidebar-news-heading">
+        <h2 id="vibe-news-heading">Latest News</h2>
+        <button type="button"
+                class="vibe-news-toggle"
+                hidden
+                aria-label="Pause automatic news scrolling">
+          Pause
+        </button>
+      </div>
+
+      <div class="vibe-news-viewport"
+           tabindex="0"
+           role="region"
+           aria-label="Lab news; scroll to read all updates">
+
+        {% for article in site.data.news limit:8 %}
+        <article class="vibe-sidebar-news-item">
+          <div class="vibe-sidebar-news-date">
+            <time datetime="{{ article.date | date: '%Y-%m-%d' }}">
+              {{ article.date }}
+            </time>
+            <span class="vibe-news-new" hidden>NEW</span>
+          </div>
+          <p>{{ article.headline | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        </article>
+        {% endfor %}
+
+      </div>
+
+      <a class="vibe-news-all" href="{{ '/allnews.html' | relative_url }}">
+        All news →
+      </a>
+    </section>
+</aside>
 </section>
 
 <section class="vibe-section" aria-label="Research focus">
@@ -87,19 +123,5 @@ permalink: /
 
 
 
-<section class="vibe-section" aria-label="Latest news">
-  <div class="vibe-section-heading">
-    <h2>Latest News</h2>
-    <a href="{{ site.url }}{{ site.baseurl }}/allnews.html">All news</a>
-  </div>
 
-  <div class="vibe-news-panel">
-    {% for article in site.data.news limit:3 %}
-    <article class="vibe-news-item">
-      <time>{{ article.date }}</time>
-      <p>{{ article.headline | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-    </article>
-    {% endfor %}
-  </div>
-</section>
 <script src="{{ '/js/refinement.js' | relative_url }}" defer></script>
