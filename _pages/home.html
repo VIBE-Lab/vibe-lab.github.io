@@ -59,6 +59,34 @@ permalink: /
   </div>
 </section>
 
+<section class="vibe-section vibe-highlights" aria-label="Selected publications">
+  <div class="vibe-section-heading vibe-highlights-heading"><h2>Selected Publications</h2>
+    <div class="vibe-highlights-tools"><a href="{{ '/publications/' | relative_url }}">All publications</a>
+      <button class="vibe-scroll-button" type="button" data-direction="-1" aria-label="Previous publications" aria-controls="vibe-publication-track">←</button>
+      <button class="vibe-scroll-button" type="button" data-direction="1" aria-label="Next publications" aria-controls="vibe-publication-track">→</button>
+    </div>
+  </div>
+  <div id="vibe-publication-track" class="vibe-highlight-track" tabindex="0" role="region" aria-label="Selected publications; scroll horizontally">
+    <article class="vibe-highlight-card"><div class="vibe-highlight-image"><img alt="COSAS 2024 challenge" loading="lazy" src="{{ '/images/pubpic/cosas.png' | relative_url }}"/></div><div class="vibe-highlight-copy"><p class="vibe-highlight-meta">Medical Image Analysis , accepted, 2026</p><h3><a href="{{ '/publications/' | relative_url }}">The COSAS 2024 Challenge: Cross-Organ and Cross-Scanner Adenocarcinoma Segmentation for Domain Generalization in Computational Pathology</a></h3><div class="vibe-paper-links"><a href="{{ "/research/cosas/papers/" | relative_url }}">Project papers</a></div></div></article>
+    <article class="vibe-highlight-card"><div class="vibe-highlight-image"><img alt="Overview of histochemical scoring for breast cancer tissue microarrays" loading="lazy" src="{{ '/images/publications/p030.webp' | relative_url }}"/></div><div class="vibe-highlight-copy"><p class="vibe-highlight-meta">IEEE Transactions on Medical Imaging , 2019</p><h3><a href="{{ '/publications/' | relative_url }}">An End-to-End Deep Learning Histochemical Scoring System for Breast Cancer TMA</a></h3><div class="vibe-paper-links">
+<a href="https://doi.org/10.1109/TMI.2018.2868333">DOI</a>
+</div></div></article>
+    <article class="vibe-highlight-card"><div class="vibe-highlight-image"><img alt="Test-time style transfer and diversity enhancement framework" loading="lazy" src="{{ '/images/publications/p006.webp' | relative_url }}"/></div><div class="vibe-highlight-copy"><p class="vibe-highlight-meta">IEEE International Symposium on Biomedical Imaging (ISBI) , 2025</p><h3><a href="{{ '/publications/' | relative_url }}">Advancing Cross-Organ Domain Generalization with Test-Time Style Transfer and Diversity Enhancement</a></h3><div class="vibe-paper-links">
+<a href="https://doi.org/10.1109/ISBI60581.2025.10981139">DOI</a>
+<a href="https://arxiv.org/pdf/2503.18567">PDF</a>
+</div></div></article>
+    <article class="vibe-highlight-card"><div class="vibe-highlight-image"><img alt="Overview of the PathVLG framework" loading="lazy" src="{{ '/images/publications/p008.png' | relative_url }}"/></div><div class="vibe-highlight-copy"><p class="vibe-highlight-meta">IEEE International Conference on Bioinformatics and Biomedicine (BIBM) , 2025</p><h3><a href="{{ '/publications/' | relative_url }}">PathVLG: A Vision-Language Framework for Domain Generalization in Cross-Organ Adenocarcinoma Segmentation</a></h3><div class="vibe-paper-links">
+<a href="https://doi.org/10.1109/BIBM66473.2025.11356784">DOI</a>
+</div></div></article>
+    <article class="vibe-highlight-card"><div class="vibe-highlight-image"><img alt="Three-stage maturity model for artificial intelligence in computational pathology" loading="lazy" src="{{ '/images/publications/p047.webp' | relative_url }}"/></div><div class="vibe-highlight-copy"><p class="vibe-highlight-meta">LabMed Discovery , 2026</p><h3><a href="{{ '/publications/' | relative_url }}">Adoption Paradox of Artificial Intelligence in Computational Pathology: A Three-Stage Maturity Model from Algorithms to Clinical Integration</a></h3><div class="vibe-paper-links">
+<a href="https://doi.org/10.1016/j.lmd.2026.100130">DOI</a>
+</div></div></article>
+  </div>
+  <p class="vibe-highlight-hint">Scroll to explore selected publications.</p>
+</section>
+
+
+
 <section class="vibe-section" aria-label="Latest news">
   <div class="vibe-section-heading">
     <h2>Latest News</h2>
@@ -74,3 +102,4 @@ permalink: /
     {% endfor %}
   </div>
 </section>
+<script src="{{ '/js/refinement.js' | relative_url }}" defer></script>
