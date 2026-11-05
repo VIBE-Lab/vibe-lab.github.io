@@ -229,4 +229,23 @@ body.vibe-theme-dark .vibe-alumni-marquee .vibe-alumni-logo-window {
 .rf-new-directions{height:300px;box-sizing:border-box;padding:14px;background:#f5f3f6;}.rf-organs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;}.rf-organs figure{margin:0;height:100%;min-width:0;display:flex;flex-direction:column;gap:8px;}.rf-organs img{width:100%;height:0;min-height:0;flex:1;object-fit:cover;border-radius:4px;}.rf-organs figcaption{font-size:12px;color:var(--vibe-muted);text-align:center;}.rf-benchmark{background:white;}.rf-benchmark img{object-fit:contain;}@media(max-width:640px){.rf-new-directions{height:230px;padding:8px;}.rf-organs{gap:6px;}.rf-organs figcaption{font-size:10px;}}
 .rf-organs{grid-template-rows:minmax(0,1fr);}.rf-organs figure{display:grid;grid-template-rows:minmax(0,1fr) auto;min-height:0;}.rf-organs figure img{height:100%;min-height:0;}
 
+/* 老师名片：悬停和点击时保持原有布局 */
+.vibe-member-card-featured,
+.vibe-member-card-featured:hover,
+.vibe-member-card-featured:focus,
+.vibe-member-card-featured:active {
+  grid-template-columns: 148px minmax(0, 1fr);
+  min-height: 216px;
+  padding: 22px;
+}
 
+@media (max-width: 640px) {
+  .vibe-member-card-featured,
+  .vibe-member-card-featured:hover,
+  .vibe-member-card-featured:focus,
+  .vibe-member-card-featured:active {
+    grid-template-columns: 84px minmax(0, 1fr);
+    min-height: 148px;
+    padding: 14px;
+  }
+}
