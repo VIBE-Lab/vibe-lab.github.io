@@ -176,3 +176,8 @@ body.vibe-theme-dark .vibe-alumni-logo-window { background:rgba(225,229,235,.88)
 body.vibe-theme-dark .vibe-alumni-marquee .vibe-alumni-logo-window {
   background: transparent;
 }
+
+
+.vibe-sidebar-news .vibe-news-toggle {
+  display: none !important;
+}
