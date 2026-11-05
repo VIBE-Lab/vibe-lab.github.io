@@ -147,7 +147,110 @@ permalink: /research/
 </section>
 
 <script>
-(()=>{const root=document.querySelector('.rf-tabs-concept');if(!root)return;const tabs=[...root.querySelectorAll('[role="tab"]')];const panels=[...root.querySelectorAll('[role="tabpanel"]')];function select(i){tabs.forEach((t,j)=>{t.setAttribute('aria-selected',String(i===j));t.tabIndex=i===j?0:-1;panels[j].hidden=i!==j;});}tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(i));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowDown'||e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();select(n);tabs[n].focus();}})});})();
+(() => {
+  const root = document.querySelector('.rf-tabs-concept');
+  if (!root) return;
+
+  const tabs = [...root.querySelectorAll('[role="tab"]')];
+  const panels = tabs.map(tab =>
+    document.getElementById(tab.getAttribute('aria-controls'))
+  );
+  if (!tabs.length || panels.some(panel => !panel)) return;
+
+  let current = Math.max(
+    0,
+    tabs.findIndex(tab => tab.getAttribute('aria-selected') === 'true')
+  );
+  let timer;
+  let hovering = false;
+  let focused = false;
+  let visible = true;
+
+  function select(index) {
+    current = index;
+    tabs.forEach((tab, i) => {
+      tab.setAttribute('aria-selected', String(i === index));
+      tab.tabIndex = i === index ? 0 : -1;
+      panels[i].hidden = i !== index;
+    });
+  }
+
+  function restart() {
+    clearInterval(timer);
+    if (hovering || focused || !visible || document.hidden) return;
+
+    timer = setInterval(() => {
+      select((current + 1) % tabs.length);
+    }, 6000);
+  }
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => {
+      select(index);
+      restart();
+    });
+
+    tab.addEventListener('keydown', event => {
+      let next;
+
+      if (event.key === 'ArrowDown' || event.key === 'ArrowRight') {
+        next = (index + 1) % tabs.length;
+      } else if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') {
+        next = (index - 1 + tabs.length) % tabs.length;
+      } else if (event.key === 'Home') {
+        next = 0;
+      } else if (event.key === 'End') {
+        next = tabs.length - 1;
+      }
+
+      if (next !== undefined) {
+        event.preventDefault();
+        select(next);
+        tabs[next].focus();
+        restart();
+      }
+    });
+  });
+
+  root.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse') return;
+    hovering = true;
+    restart();
+  });
+
+  root.addEventListener('pointerleave', event => {
+    if (event.pointerType !== 'mouse') return;
+    hovering = false;
+    restart();
+  });
+
+  // 键盘浏览时暂停；鼠标点击后移开仍可继续自动切换。
+  root.addEventListener('focusin', event => {
+    focused = event.target.matches(':focus-visible');
+    restart();
+  });
+
+  root.addEventListener('focusout', () => {
+    setTimeout(() => {
+      focused = root.contains(document.activeElement) &&
+        document.activeElement.matches(':focus-visible');
+      restart();
+    }, 0);
+  });
+
+  document.addEventListener('visibilitychange', restart);
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+      restart();
+    });
+    observer.observe(root);
+  }
+
+  select(current);
+  restart();
+})();
 </script>
 
   
