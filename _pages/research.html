@@ -18,6 +18,139 @@ permalink: /research/
     </p>
   </section>
 
+<section aria-label="Research directions" class="vibe-section rf-concept rf-tabs-concept">
+ <div class="vibe-section-heading">
+  <h2>
+   Research Directions
+  </h2>
+  <a href="{{ '/publications/' | relative_url }}">
+   View publications
+  </a>
+ </div>
+ <div class="rf-tabs-layout">
+  <div aria-label="Research areas" aria-orientation="vertical" class="rf-tablist" role="tablist">
+   <button aria-controls="rf-panel-0" aria-selected="true" class="rf-tab" id="rf-tab-0" role="tab" tabindex="0" type="button">
+    <span>
+     Computational Pathology
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+   <button aria-controls="rf-panel-1" aria-selected="false" class="rf-tab" id="rf-tab-1" role="tab" tabindex="-1" type="button">
+    <span>
+     Biomedical Image Analysis
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+   <button aria-controls="rf-panel-2" aria-selected="false" class="rf-tab" id="rf-tab-2" role="tab" tabindex="-1" type="button">
+    <span>
+     Domain Generalization
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+   <button aria-controls="rf-panel-3" aria-selected="false" class="rf-tab" id="rf-tab-3" role="tab" tabindex="-1" type="button">
+    <span>
+     Biomedical Benchmarks &amp; Datasets
+    </span>
+    <span aria-hidden="true" class="rf-tab-arrow">
+     →
+    </span>
+   </button>
+  </div>
+  <div>
+   <article aria-labelledby="rf-tab-0" class="rf-tabs-panel" id="rf-panel-0" role="tabpanel">
+    <div class="rf-tabs-image rf-real-image">
+     <div class="rf-real-pair">
+      <figure>
+       <img alt="Original histopathology tissue" loading="lazy" src="{{ '/images/concepts/real-v2/tissue-image.png' | relative_url }}"/>
+       <figcaption>
+        Tissue image
+       </figcaption>
+      </figure>
+      <figure>
+       <img alt="Annotation overlay on the same tissue" loading="lazy" src="{{ '/images/concepts/real-v2/tissue-overlay.png' | relative_url }}"/>
+       <figcaption>
+        Annotation overlay
+       </figcaption>
+      </figure>
+     </div>
+    </div>
+    <h3>
+     Computational Pathology
+    </h3>
+    <p>
+     Whole-slide image analysis, tumor segmentation, tissue phenotyping, and
+          quantitative pathology tools for more precise biomedical interpretation.
+    </p>
+   </article>
+   <article aria-labelledby="rf-tab-1" class="rf-tabs-panel" hidden="" id="rf-panel-1" role="tabpanel">
+    <div class="rf-tabs-image rf-real-image">
+     <img alt="Original image, DAB channel, and stain intensity description from Figure 3" loading="lazy" src="{{ '/images/concepts/real-v2/stain-comparison.png' | relative_url }}"/>
+    </div>
+    <h3>
+     Biomedical Image Analysis
+    </h3>
+    <p>
+     Robust denoising, segmentation, microscopy analysis, and visual measurement
+          methods designed around real data quality and acquisition constraints.
+    </p>
+   </article>
+   <article aria-labelledby="rf-tab-2" class="rf-tabs-panel" hidden="" id="rf-panel-2" role="tabpanel">
+    <div class="rf-tabs-image rf-new-directions rf-organs">
+     <figure>
+      <img alt="colorectal histopathology examples" loading="lazy" src="{{ '/images/concepts/real-v2/organ-colorectal.png' | relative_url }}"/>
+      <figcaption>
+       Colorectal
+      </figcaption>
+     </figure>
+     <figure>
+      <img alt="gastric histopathology examples" loading="lazy" src="{{ '/images/concepts/real-v2/organ-gastric.png' | relative_url }}"/>
+      <figcaption>
+       Gastric
+      </figcaption>
+     </figure>
+     <figure>
+      <img alt="pancreatic histopathology examples" loading="lazy" src="{{ '/images/concepts/real-v2/organ-pancreatic.png' | relative_url }}"/>
+      <figcaption>
+       Pancreatic
+      </figcaption>
+     </figure>
+    </div>
+    <h3>
+     Domain Generalization
+    </h3>
+    <p>
+     Robust visual intelligence across organs, scanners, staining conditions, and acquisition shifts, with a focus on generalizable biomedical image analysis.
+    </p>
+   </article>
+   <article aria-labelledby="rf-tab-3" class="rf-tabs-panel" hidden="" id="rf-panel-3" role="tabpanel">
+    <div class="rf-tabs-image rf-new-directions rf-benchmark">
+     <img alt="COSAS dataset collection, composition, model benchmarking and evaluation overview" loading="lazy" src="{{ '/images/concepts/cosas-overview.png' | relative_url }}"/>
+    </div>
+    <h3>
+     Biomedical Benchmarks &amp; Datasets
+    </h3>
+    <p>
+     Biomedical datasets, challenges, and reproducible evaluation that connect computational pathology research with practical assessment of AI methods.
+    </p>
+    <a class="rf-concept-link" href="{{ '/research/cosas/papers/' | relative_url }}">
+     Explore COSAS →
+    </a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<script>
+(()=>{const root=document.querySelector('.rf-tabs-concept');if(!root)return;const tabs=[...root.querySelectorAll('[role="tab"]')];const panels=[...root.querySelectorAll('[role="tabpanel"]')];function select(i){tabs.forEach((t,j)=>{t.setAttribute('aria-selected',String(i===j));t.tabIndex=i===j?0:-1;panels[j].hidden=i!==j;});}tabs.forEach((t,i)=>{t.addEventListener('click',()=>select(i));t.addEventListener('keydown',e=>{let n;if(e.key==='ArrowDown'||e.key==='ArrowRight')n=(i+1)%tabs.length;else if(e.key==='ArrowUp'||e.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;else if(e.key==='Home')n=0;else if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();select(n);tabs[n].focus();}})});})();
+</script>
+
+  
   <section class="vibe-cosas-strip" aria-labelledby="cosas-title">
     <div class="vibe-cosas-logo">
       <img src="{{ site.url }}{{ site.baseurl }}/images/pubpic/cosas.png" alt="COSAS 2024 challenge visual">
@@ -47,49 +180,6 @@ permalink: /research/
     </div>
   </section>
 
-  <section class="vibe-section" aria-label="Research directions">
-    <div class="vibe-section-heading">
-      <h2>Research Directions</h2>
-      <a href="{{ site.url }}{{ site.baseurl }}/publications">View publications</a>
-    </div>
-
-    <div class="vibe-card-grid">
-      <article class="vibe-page-card">
-        <span class="vibe-card-index">01</span>
-        <h3>Computational Pathology</h3>
-        <p>
-          Whole-slide image analysis, tumor segmentation, tissue phenotyping, and
-          quantitative pathology tools for more precise biomedical interpretation.
-        </p>
-      </article>
-
-      <article class="vibe-page-card">
-        <span class="vibe-card-index">02</span>
-        <h3>Biomedical Image Analysis</h3>
-        <p>
-          Robust denoising, segmentation, microscopy analysis, and visual measurement
-          methods designed around real data quality and acquisition constraints.
-        </p>
-      </article>
-
-      <article class="vibe-page-card">
-        <span class="vibe-card-index">03</span>
-        <h3>Multimodal Biomedical AI</h3>
-        <p>
-          Learning from images together with reports, clinical context, molecular
-          signals, and metadata to make biomedical AI more grounded and useful.
-        </p>
-      </article>
-
-      <article class="vibe-page-card">
-        <span class="vibe-card-index">04</span>
-        <h3>Usable AI Software</h3>
-        <p>
-          We value aesthetics as part of research impact: software should be clear,
-          reliable, easy to inspect, and pleasant enough that people actually use it.
-        </p>
-      </article>
-    </div>
-  </section>
+  
 
 </main>
