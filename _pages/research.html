@@ -67,13 +67,13 @@ permalink: /research/
     <div class="rf-tabs-image rf-real-image">
      <div class="rf-real-pair">
       <figure>
-       <img alt="Original histopathology tissue" loading="lazy" src="{{ '/images/concepts/real-v2/tissue-image.png' | relative_url }}"/>
+       <img alt="Original histopathology tissue" loading="eager" decoding="async" src="{{ '/images/concepts/real-v2/tissue-image.png' | relative_url }}"/>
        <figcaption>
         Tissue image
        </figcaption>
       </figure>
       <figure>
-       <img alt="Annotation overlay on the same tissue" loading="lazy" src="{{ '/images/concepts/real-v2/tissue-overlay.png' | relative_url }}"/>
+       <img alt="Annotation overlay on the same tissue" loading="eager" decoding="async" src="{{ '/images/concepts/real-v2/tissue-overlay.png' | relative_url }}"/>
        <figcaption>
         Annotation overlay
        </figcaption>
@@ -90,7 +90,7 @@ permalink: /research/
    </article>
    <article aria-labelledby="rf-tab-1" class="rf-tabs-panel" hidden="" id="rf-panel-1" role="tabpanel">
     <div class="rf-tabs-image rf-real-image">
-     <img alt="Original image, DAB channel, and stain intensity description from Figure 3" loading="lazy" src="{{ '/images/concepts/real-v2/stain-comparison.png' | relative_url }}"/>
+     <img alt="Original image, DAB channel, and stain intensity description from Figure 3" loading="eager" decoding="async" src="{{ '/images/concepts/real-v2/stain-comparison.png' | relative_url }}"/>
     </div>
     <h3>
      Biomedical Image Analysis
@@ -103,19 +103,19 @@ permalink: /research/
    <article aria-labelledby="rf-tab-2" class="rf-tabs-panel" hidden="" id="rf-panel-2" role="tabpanel">
     <div class="rf-tabs-image rf-new-directions rf-organs">
      <figure>
-      <img alt="colorectal histopathology examples" loading="lazy" src="{{ '/images/concepts/real-v2/organ-colorectal.png' | relative_url }}"/>
+      <img alt="colorectal histopathology examples" loading="eager" decoding="async" src="{{ '/images/concepts/real-v2/organ-colorectal.png' | relative_url }}"/>
       <figcaption>
        Colorectal
       </figcaption>
      </figure>
      <figure>
-      <img alt="gastric histopathology examples" loading="lazy" src="{{ '/images/concepts/real-v2/organ-gastric.png' | relative_url }}"/>
+      <img alt="gastric histopathology examples" loading="eager" decoding="async" src="{{ '/images/concepts/real-v2/organ-gastric.png' | relative_url }}"/>
       <figcaption>
        Gastric
       </figcaption>
      </figure>
      <figure>
-      <img alt="pancreatic histopathology examples" loading="lazy" src="{{ '/images/concepts/real-v2/organ-pancreatic.png' | relative_url }}"/>
+      <img alt="pancreatic histopathology examples" loading="eager" decoding="async" src="{{ '/images/concepts/real-v2/organ-pancreatic.png' | relative_url }}"/>
       <figcaption>
        Pancreatic
       </figcaption>
@@ -130,7 +130,7 @@ permalink: /research/
    </article>
    <article aria-labelledby="rf-tab-3" class="rf-tabs-panel" hidden="" id="rf-panel-3" role="tabpanel">
     <div class="rf-tabs-image rf-new-directions rf-benchmark">
-     <img alt="COSAS dataset collection, composition, model benchmarking and evaluation overview" loading="lazy" src="{{ '/images/concepts/cosas-overview.png' | relative_url }}"/>
+     <img alt="COSAS dataset collection, composition, model benchmarking and evaluation overview" loading="eager" decoding="async" src="{{ '/images/concepts/cosas-overview.png' | relative_url }}"/>
     </div>
     <h3>
      Biomedical Benchmarks &amp; Datasets
@@ -163,32 +163,85 @@ permalink: /research/
   );
   let timer;
   let hovering = false;
-  let focused = false;
+  let keyboardFocus = false;
   let visible = true;
+  let revision = 0;
+  let animation;
 
-  function select(index) {
+  // 立即请求所有方向的图片，并等待图片解码完成。
+  const ready = panels.map(panel =>
+    Promise.all([...panel.querySelectorAll('img')].map(image => {
+      image.loading = 'eager';
+      image.decoding = 'async';
+
+      if (image.decode) {
+        return image.decode().catch(() => {});
+      }
+
+      if (image.complete) return Promise.resolve();
+
+      return new Promise(resolve => {
+        image.addEventListener('load', resolve, { once: true });
+        image.addEventListener('error', resolve, { once: true });
+      });
+    }))
+  );
+
+  function paused() {
+    return hovering || keyboardFocus || !visible || document.hidden;
+  }
+
+  function show(index) {
+    animation?.cancel();
     current = index;
+
     tabs.forEach((tab, i) => {
       tab.setAttribute('aria-selected', String(i === index));
       tab.tabIndex = i === index ? 0 : -1;
       panels[i].hidden = i !== index;
     });
+
+    // 只淡入，不移动布局。
+    if (panels[index].animate) {
+      animation = panels[index].animate(
+        [{ opacity: 0 }, { opacity: 1 }],
+        { duration: 220, easing: 'ease-out' }
+      );
+    }
   }
 
-  function restart() {
-    clearInterval(timer);
-    if (hovering || focused || !visible || document.hidden) return;
+  async function schedule() {
+    clearTimeout(timer);
+    const token = ++revision;
+    if (paused()) return;
 
-    timer = setInterval(() => {
-      select((current + 1) % tabs.length);
+    await ready[current];
+    if (token !== revision || paused()) return;
+
+    timer = setTimeout(async () => {
+      const next = (current + 1) % tabs.length;
+
+      await ready[next];
+      if (token !== revision || paused()) return;
+
+      show(next);
+      schedule();
     }, 6000);
   }
 
+  async function choose(index) {
+    clearTimeout(timer);
+    const token = ++revision;
+
+    await ready[index];
+    if (token !== revision) return;
+
+    show(index);
+    schedule();
+  }
+
   tabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => {
-      select(index);
-      restart();
-    });
+    tab.addEventListener('click', () => choose(index));
 
     tab.addEventListener('keydown', event => {
       let next;
@@ -205,9 +258,8 @@ permalink: /research/
 
       if (next !== undefined) {
         event.preventDefault();
-        select(next);
         tabs[next].focus();
-        restart();
+        choose(next);
       }
     });
   });
@@ -215,41 +267,38 @@ permalink: /research/
   root.addEventListener('pointerenter', event => {
     if (event.pointerType !== 'mouse') return;
     hovering = true;
-    restart();
+    schedule();
   });
 
   root.addEventListener('pointerleave', event => {
     if (event.pointerType !== 'mouse') return;
     hovering = false;
-    restart();
+    schedule();
   });
 
-  // 键盘浏览时暂停；鼠标点击后移开仍可继续自动切换。
   root.addEventListener('focusin', event => {
-    focused = event.target.matches(':focus-visible');
-    restart();
+    keyboardFocus = event.target.matches(':focus-visible');
+    schedule();
   });
 
   root.addEventListener('focusout', () => {
     setTimeout(() => {
-      focused = root.contains(document.activeElement) &&
+      keyboardFocus = root.contains(document.activeElement) &&
         document.activeElement.matches(':focus-visible');
-      restart();
+      schedule();
     }, 0);
   });
 
-  document.addEventListener('visibilitychange', restart);
+  document.addEventListener('visibilitychange', schedule);
 
   if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
+    new IntersectionObserver(entries => {
       visible = entries[0].isIntersecting;
-      restart();
-    });
-    observer.observe(root);
+      schedule();
+    }).observe(root);
   }
 
-  select(current);
-  restart();
+  schedule();
 })();
 </script>
 
