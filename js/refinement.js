@@ -1,29 +1,4 @@
-(() => {
-  document.querySelectorAll('.vibe-highlights').forEach(section => {
-    const track = section.querySelector('.vibe-highlight-track');
-    const buttons = [...section.querySelectorAll('[data-direction]')];
-    if (!track || !buttons.length) return;
-    section.setAttribute('data-enhanced', '');
-    const update = () => {
-      const max = Math.max(0, track.scrollWidth - track.clientWidth);
-      buttons.forEach(button => {
-        button.disabled = Number(button.dataset.direction) < 0
-          ? track.scrollLeft <= 2 : track.scrollLeft >= max - 2;
-      });
-    };
-    buttons.forEach(button => button.addEventListener('click', () => {
-      const card = track.firstElementChild;
-      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
-      const step = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
-      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      track.scrollBy({left: Number(button.dataset.direction) * step, behavior: reduced ? 'auto' : 'smooth'});
-    }));
-    track.addEventListener('scroll', update, {passive:true});
-    window.addEventListener('resize', update);
-    if ('ResizeObserver' in window) new ResizeObserver(update).observe(track);
-    update();
-  });
-})();
+
 
 
 /* Latest News: gentle manual-controllable scrolling, no duplicated news records. */
@@ -74,101 +49,95 @@
   });
 })();
 
-/* Selected Publications: automatic card scrolling. Keep existing arrow handlers. */
+/* Selected Publications: continuous seamless loop. */
 (() => {
   document.querySelectorAll('.vibe-highlights').forEach(section => {
     const track = section.querySelector('.vibe-highlight-track');
-    if (!track || track.dataset.autoScrollReady) return;
-    track.dataset.autoScrollReady = 'true';
-
-    let direction = 1;
-    let timer;
-    let hovered = false;
-    let keyboardFocus = false;
-    let visible = true;
-    let touching = false;
-    let frame = 0;
-    let moving = false;
-
-    // Avoid scroll-snap fighting the intermediate animation positions.
+    if (!track || track.dataset.loopReady) return;
+    const originals = [...track.children];
+    if (originals.length < 2) return;
+    track.dataset.loopReady = 'true';
     track.style.scrollSnapType = 'none';
     track.style.scrollBehavior = 'auto';
+    track.style.overflowAnchor = 'none';
 
-    function stopMotion() {
-      cancelAnimationFrame(frame);
-      moving = false;
+    // A second copy makes the end connect visually to the beginning.
+    const clones = originals.map(card => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.removeAttribute('id');
+      clone.querySelectorAll('[id]').forEach(e => e.removeAttribute('id'));
+      clone.querySelectorAll('a,button,input,select,textarea,[tabindex]').forEach(e => e.tabIndex = -1);
+      track.append(clone);
+      return clone;
+    });
+
+    let period = 0;
+    let position = track.scrollLeft;
+    let last = 0;
+    let hovered = false;
+    let focused = false;
+    let dragging = false;
+    let visible = true;
+    let ready = false;
+    let holdUntil = 0;
+    const speed = 28; // pixels per second
+
+    function measure() {
+      period = clones[0].getBoundingClientRect().left - originals[0].getBoundingClientRect().left;
+      position = track.scrollLeft;
     }
 
-    function glideTo(target) {
-      stopMotion();
-      const from = track.scrollLeft;
-      const start = performance.now();
-      moving = true;
-      function tick(now) {
-        const progress = Math.min(1, (now - start) / 1400);
-        const eased = progress < 0.5
-          ? 4 * progress * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-        track.scrollLeft = from + (target - from) * eased;
-        if (progress < 1) frame = requestAnimationFrame(tick);
-        else { moving = false; schedule(); }
-      }
-      frame = requestAnimationFrame(tick);
+    function write(value) {
+      if (period <= 0) return;
+      position = ((value % period) + period) % period;
+      track.scrollLeft = position;
     }
 
-    const imagesReady = Promise.all([...track.querySelectorAll('img')].map(img => {
+    const buttons = [...section.querySelectorAll('[data-direction]')];
+    buttons.forEach(button => {
+      button.disabled = false;
+      button.addEventListener('click', () => {
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        const step = originals[0].getBoundingClientRect().width + gap;
+        write(track.scrollLeft + Number(button.dataset.direction) * step);
+        holdUntil = performance.now() + 2500;
+      });
+    });
+    section.setAttribute('data-enhanced', '');
+
+    section.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') hovered = true; });
+    section.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') hovered = false; });
+    section.addEventListener('focusin', e => { focused = e.target.matches(':focus-visible'); });
+    section.addEventListener('focusout', () => setTimeout(() => {
+      focused = section.contains(document.activeElement) && document.activeElement.matches(':focus-visible');
+    }, 0));
+    track.addEventListener('pointerdown', () => { dragging = true; });
+    window.addEventListener('pointerup', () => { dragging = false; });
+    window.addEventListener('pointercancel', () => { dragging = false; });
+    track.addEventListener('wheel', () => { holdUntil = performance.now() + 2500; }, { passive: true });
+    if ('IntersectionObserver' in window) new IntersectionObserver(entries => {
+      visible = entries[0].isIntersecting;
+    }).observe(section);
+    if ('ResizeObserver' in window) new ResizeObserver(measure).observe(track);
+    window.addEventListener('resize', measure);
+
+    Promise.all([...track.querySelectorAll('img')].map(img => {
       img.loading = 'eager';
       return img.decode ? img.decode().catch(() => {}) : Promise.resolve();
-    }));
+    })).then(() => { measure(); ready = true; });
 
-    function schedule() {
-      clearTimeout(timer);
-      if (hovered || keyboardFocus || touching || !visible || document.hidden || moving) return;
-      timer = setTimeout(async () => {
-        await imagesReady;
-        if (hovered || keyboardFocus || touching || !visible || document.hidden) return;
-        const max = Math.max(0, track.scrollWidth - track.clientWidth);
-        if (max > 2) {
-          if (track.scrollLeft >= max - 2) direction = -1;
-          else if (track.scrollLeft <= 2) direction = 1;
-          const card = track.firstElementChild;
-          const step = card.getBoundingClientRect().width +
-            (parseFloat(getComputedStyle(track).columnGap) || 0);
-          glideTo(Math.max(0, Math.min(max, track.scrollLeft + direction * step)));
-        }
-        schedule();
-      }, 6000);
+    function tick(now) {
+      const dt = last ? Math.min(now - last, 50) / 1000 : 0;
+      last = now;
+      if (ready && visible && !document.hidden && !hovered && !focused && !dragging && now >= holdUntil && period > 0) {
+        // Keep fractional positions: rounding every frame can make slow scrolling stutter.
+        if (Math.abs(track.scrollLeft - position) > 2) position = track.scrollLeft;
+        write(position + speed * dt);
+      } else position = track.scrollLeft;
+      requestAnimationFrame(tick);
     }
-
-    section.addEventListener('pointerenter', e => {
-      if (e.pointerType === 'mouse') { hovered = true; stopMotion(); schedule(); }
-    });
-    section.addEventListener('pointerleave', e => {
-      if (e.pointerType === 'mouse') { hovered = false; schedule(); }
-    });
-    section.addEventListener('focusin', e => {
-      keyboardFocus = e.target.matches(':focus-visible');
-      schedule();
-    });
-    section.addEventListener('focusout', () => setTimeout(() => {
-      keyboardFocus = section.contains(document.activeElement) &&
-        document.activeElement.matches(':focus-visible');
-      schedule();
-    }, 0));
-    section.addEventListener('click', schedule);
-    track.addEventListener('pointerdown', () => { touching = true; stopMotion(); schedule(); });
-    window.addEventListener('pointerup', () => { touching = false; schedule(); });
-    window.addEventListener('pointercancel', () => { touching = false; schedule(); });
-    track.addEventListener('wheel', () => { stopMotion(); schedule(); }, { passive: true });
-    document.addEventListener('visibilitychange', () => { stopMotion(); schedule(); });
-    if ('IntersectionObserver' in window) {
-      new IntersectionObserver(entries => {
-        visible = entries[0].isIntersecting;
-        if (!visible) stopMotion();
-        schedule();
-      }).observe(section);
-    }
-    imagesReady.then(schedule);
+    requestAnimationFrame(tick);
   });
 })();
 
